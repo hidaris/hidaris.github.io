@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-30df8235445ea6025ac8.js"
+    "url": "webpack-runtime-9a3cf0b1619526e5f3c4.js"
   },
   {
     "url": "styles.732824a6b9291818492b.css"
@@ -42,14 +42,14 @@ self.__precacheManifest = [
     "url": "netlify-identity-widget-93fd119579c4cf853684.js"
   },
   {
-    "url": "app-63f1eb8f82b362eed419.js"
+    "url": "app-5652fa39cfa64d6cd64e.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-2fb560e943ea9fad2129.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "28906442259b177df9ea6a143d20e3ee"
+    "revision": "db35e18180868849f2f2ea7edb1acee9"
   },
   {
     "url": "manifest.json",
@@ -145,12 +145,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^https://cdn.jsdelivr.net/gh/hidaris/hidaris.github.io@0.1`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-63f1eb8f82b362eed419.js`))) {
+  if (!resources || !(await caches.match(`https://cdn.jsdelivr.net/gh/hidaris/hidaris.github.io@0.1/app-5652fa39cfa64d6cd64e.js`))) {
     return await fetch(event.request)
   }
 
@@ -163,7 +163,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `https://cdn.jsdelivr.net/gh/hidaris/hidaris.github.io@0.1/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
