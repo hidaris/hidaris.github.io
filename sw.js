@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-3032beaec0941be90c82.js"
+    "url": "webpack-runtime-30df8235445ea6025ac8.js"
   },
   {
     "url": "styles.732824a6b9291818492b.css"
@@ -42,14 +42,14 @@ self.__precacheManifest = [
     "url": "netlify-identity-widget-93fd119579c4cf853684.js"
   },
   {
-    "url": "app-90a37f376d592aaf95fb.js"
+    "url": "app-63f1eb8f82b362eed419.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-2fb560e943ea9fad2129.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "906be4cfe95aab42cf8c47593ec8d5d7"
+    "revision": "28906442259b177df9ea6a143d20e3ee"
   },
   {
     "url": "manifest.json",
@@ -145,12 +145,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^https://monad-1300092218.cos.ap-guangzhou.myqcloud.com`), ``)
+  pathname = pathname.replace(new RegExp(`^`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`https://monad-1300092218.cos.ap-guangzhou.myqcloud.com/app-90a37f376d592aaf95fb.js`))) {
+  if (!resources || !(await caches.match(`/app-63f1eb8f82b362eed419.js`))) {
     return await fetch(event.request)
   }
 
@@ -163,7 +163,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `https://monad-1300092218.cos.ap-guangzhou.myqcloud.com/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
