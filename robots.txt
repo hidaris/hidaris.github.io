@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Sitemap: https://monad.site/sitemap.xml
+Host: https://monad.site
