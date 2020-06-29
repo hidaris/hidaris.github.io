@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://monad.site
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -103,3 +103,8 @@ deploy:
     branch: master
 
 all_minifier: true
+
+sitemap:
+    path: sitemap.xml
+    template: ./sitemap_template.xml
+    rel: false
