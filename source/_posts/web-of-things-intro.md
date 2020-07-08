@@ -57,3 +57,13 @@ WoT 相比于直接使用 Web，解决了设备之间的可发现、自描述和
 
 ### 自描述
 为了避免分裂，在 WoT 中设备本身需要通过一些额外的信息来向另外一个设备描述自己，比如拥有什么属性，可以执行什么操作，等等；而描述这些信息的同时我们又要兼顾机器可读及人类可读，为了不给协议本身增加额外的负担，这些“资源”都是可以使用 URL（“统一资源定位符”）link 的。这种使用 URI 来描述互联网上资源的方式被称为关联数据（Linked Data），利用这一特性，我们就可以在 WoT 协议之中，关联用于定义协议本身的元数据（Schema）。
+
+## 总结
+物联网（IoT）具备发展为普适计算的潜力，但由于技术图景的碎片化而停滞不前。Web of Things 旨在解决物联网(IoT)的分裂问题，使构建用例变得更加容易，并且不需掌握各种复杂的物联网技术和标准，有许多行业将受益，例如 STEAM 教育，智能家居，智能城市，智能产业，智能农业，智能医疗保健等等。
+
+## 引用
+1. [Web of Things是什么？与IoT（物联网）有何区别？
+](https://www.zhihu.com/question/26469697)
+2. [从物联到万联：Node.js 与树莓派万维物联网构建实践](https://book.douban.com/subject/27624444/)
+3. [Web of Things](https://webofthings.org/)
+4. [介绍 WebThings](https://blog.just4fun.site/post/iot/introducing-webthings/)
