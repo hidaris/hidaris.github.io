@@ -1,6 +1,6 @@
 ---
 title: 为 Scratch 添加绿米扩展
-tags: [WoT,Scratch, CodeLab, Aqara]
+tags: [WoT,Scratch,CodeLab,Aqara,智能家居,绿米]
 date: 2020-08-11 10:00:00
 ---
 >种瓜上周末与 Aqara 开放平台工程师、CEO、几位董事以及其他的小伙伴碰了个面，一起讨论在 本月 18-19 号的 Aqara Home 中国服务商大会上 使用 CodeLab 创作平台做哪些有趣的演示，以及后续的合作可能: Aqara(绿米)智能家居用户(尤其是孩子)可在 CodeLab 创作平台上对智能设备进行编程，让人们将智能家庭改造为魔法世界吧！
