@@ -146,15 +146,6 @@
     font-size 1rem
     line-height 2.5rem
 
-// Rewrite container
-.container-fluid
-  padding-left 0
-  padding-right 0
-
-  .row
-    margin-left 0
-    margin-right 0
-
 // Rewrite github-markdown.css
 .markdown-body
   font-size 1rem
@@ -214,6 +205,10 @@
 
 // Rewrite highlight
 .markdown-body
+
+  pre
+    border-radius 3px
+
   .hljs
     overflow-x initial
     padding 0
@@ -221,11 +216,9 @@
     pre
       background-color initial !important
 
-  .radius3
-    border-radius 3px
-
   & > .code-wrapper
     position relative
+    border-radius 3px
 
     pre[class*=language-].line-numbers
       position initial
@@ -485,6 +478,10 @@ $npColor = theme-config("fun_features.progressbar.color", "#29d")
   .peg
     box-shadow 0 0 14px $npColor, 0 0 8px $npColor !important
 
+  @media (max-width: 575px)
+    .bar
+      display none
+
 // Rewrite valine
 .v[data-class=v]
   .status-bar, .veditor, .vinput, .vbtn, p, pre code
@@ -528,3 +525,10 @@ mjx-container, .mjx-container
 
 .katex, .mjx-mrow
   white-space pre-wrap !important
+
+// Rewrite hint
+.footnote-ref [class*=hint--][aria-label]:after
+  max-width 12rem
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis

@@ -111,7 +111,7 @@ fun_features:
     height_px: 3
     color: "#29d"
     # See: https://github.com/rstacruz/nprogress
-    options: { showSpinner: false, trickleSpeed: 200 }
+    options: { showSpinner: false, trickleSpeed: 100 }
 
 # 主题暗色模式，开启后菜单中会出现切换按钮，用户浏览器会存储切换选项，并且会遵循 prefers-color-scheme 自动切换
 # Theme dark mode. If enable, a switch button will appear on the menu, each of the visitor's browser will store his switch option
@@ -268,6 +268,9 @@ version:
 # 页头
 # Header
 #---------------------------
+
+# 导航栏的相关配置
+# Navigation bar
 navbar:
   # 导航栏左侧的标题，为空则按 hexo config 中 `title` 显示
   # The title on the left side of the navigation bar. If empty, it is based on `title` in hexo config
@@ -297,8 +300,8 @@ navbar:
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
     #- { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
 
-# 搜索栏，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
-# Search bar, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
+# 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
+# Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
 search:
   enable: true
   # 搜索索引文件的路径，可以是相对路径或外站的绝对路径
@@ -318,6 +321,17 @@ search:
   # If true, search will scan the post content
   content: true
 
+# 首屏图片的相关配置
+# Config of the big image on the first screen
+banner:
+  # 视差滚动，图片与板块会随着屏幕滚动产生视差效果
+  # Scrolling parallax
+  parallax: true
+
+  # 图片最小的宽高比，以免图片两边被过度裁剪，适用于移动端竖屏时，如需关闭设为 0
+  # Minimum ratio of width to height, applicable to the vertical screen of mobile device, if you need to close it, set it to 0
+  width_height_ratio: 1.0
+
 # 向下滚动的箭头
 # Scroll down arrow
 scroll_down_arrow:
@@ -325,7 +339,8 @@ scroll_down_arrow:
 
   # 头图高度不小于指定比例，才显示箭头
   # Only the height of the banner image is greater than the ratio, the arrow is displayed
-  banner_height_limit: 90
+  # Available: 0 - 100
+  banner_height_limit: 80
 
   # 翻页后自动滚动
   # Auto scroll after page turning
@@ -335,10 +350,6 @@ scroll_down_arrow:
 # Scroll top arrow
 scroll_top_arrow:
   enable: true
-
-# 头图滚动视差
-# Banner image scrolling parallax
-banner_parallax: true
 
 
 #---------------------------
@@ -401,10 +412,6 @@ index:
   # Opacity of the banner mask, 1.0 is completely opaque
   # Available: 0 - 1.0
   banner_mask_alpha: 0.3
-
-  # 默认的文章封面图，当没有指定 index_img 时会使用该图片，若都为空则不显示任何图片
-  # Path of the default post cover when `index_img` is not set. If empty, no image will be displayed
-  post_default_img:
 
   # 首页副标题的独立设置
   # Independent config of home page subtitle
@@ -470,6 +477,10 @@ post:
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
+  # 文章在首页的默认封面图，当没有指定 index_img 时会使用该图片，若两者都为空则不显示任何图片
+  # Path of the default post cover when `index_img` is not set. If both are empty, no image will be displayed
+  default_index_img:
+
   # 文章标题下方的元信息
   # Meta information below title
   meta:
@@ -528,14 +539,18 @@ post:
     relative: false
 
   # 文章右侧目录
-  # Table of contents
+  # Table of contents (TOC)
   toc:
     enable: true
+    # 目录会选择这些节点作为标题
+    # TOC will select these nodes as headings
     headingSelector: "h1,h2,h3,h4,h5,h6"
+    # 层级的折叠深度，0 是全部折叠，大于 0 后如果存在下级标题则默认展开
+    # Collapse depth. If 0, all headings collapsed. If greater than 0, it will be expanded by default if there are sub headings
     collapseDepth: 0
 
-  # 版权声明
-  # Copyright
+  # 版权声明，会显示在每篇文章的结尾
+  # Copyright, will be displayed at the end of each post
   copyright:
     enable: true
     content: '本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！'
@@ -578,8 +593,8 @@ post:
     # Options: mathjax | katex
     engine: mathjax
 
-  # 流程图，基于 mermaid-js
-  # Flow chart, based on mermaid-js
+  # 流程图，基于 mermaid-js，具体请见：https://hexo.fluid-dev.com/docs/guide/#mermaid-流程图
+  # Flow chart, based on mermaid-js, see: https://hexo.fluid-dev.com/docs/en/guide/#mermaid
   mermaid:
     # 开启后文章默认可用，自定义页面如需使用，需在 Front-matter 中指定 `mermaid: true`
     # If you want to use mermaid on the custom page, you need to set `mermaid: true` in Front-matter
@@ -624,7 +639,7 @@ utterances:
 
 # Disqus
 # 基于第三方的服务，国内用户直接使用容易被墙，建议配合 Disqusjs
-# Third-party based services, it is a very popular
+# Based on third-party service
 # See: https://disqus.com
 disqus:
   shortname:
@@ -669,8 +684,8 @@ valine:
   serverURLs:
 
 # Waline
-# 一款从 Valine 衍生的带后端的评论系统
-# A comment system with backend derived from Valine
+# 一款从 Valine 衍生的带后端的评论插件
+# A comment plugin with backend derived from Valine
 # See: https://waline.js.org/
 waline:
   serverURL: ''
@@ -688,7 +703,7 @@ waline:
 
 # 畅言 Changyan
 # 基于第三方的服务
-# Third-party based services, insufficient support for regions outside China
+# Based on third-party service, insufficient support for regions outside China
 # http://changyan.kuaizhan.com
 changyan:
   appid: ''
@@ -696,7 +711,7 @@ changyan:
 
 # 来必力 Livere
 # 基于第三方的服务
-# Third-party based services
+# Based on third-party service
 # See: https://www.livere.com
 livere:
   uid: ''
@@ -711,7 +726,7 @@ remark42:
   max_shown_comments: 10
   locale: zh
 
-# twikoo
+# Twikoo
 # 基于腾讯云开发
 # Based on Tencent CloudBase
 # See: https://twikoo.js.org
@@ -853,14 +868,12 @@ links:
 
 
 #---------------------------
-# 以下是配置 JS CSS 静态资源的 URL 前缀，可以自定义成 CDN 地址，
-# 默认的 staticfile CDN 可能在部分地区无法访问，如果需要修改，最好使用与默认配置相同的版本，以避免潜在的问题，
-# 在站点上启用 https 时，请使用 CDN 地址的 https 协议，
+# 以下是配置 JS CSS 等静态资源的 URL 前缀，可以自定义成 CDN 地址，
+# 默认的 jsDelivr CDN 可能在部分地区无法访问，如果需要修改，最好使用与默认配置相同的版本，以避免潜在的问题，
 # ** 如果你不知道如何设置，请不要做任何改动 **
 #
-# Here is the url prefix to configure JS and CSS static assets. Set CDN addresses you want to customize.
+# Here is the url prefix to configure the static assets. Set CDN addresses you want to customize.
 # Be aware that you would better use the same version as default ones to avoid potential problems.
-# Use the https protocol of CDN url when you enable https on your site.
 # DO NOT EDIT THE FOLLOWING SETTINGS UNLESS YOU KNOW WHAT YOU ARE DOING
 #---------------------------
 

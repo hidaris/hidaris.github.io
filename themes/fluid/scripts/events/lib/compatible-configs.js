@@ -1,14 +1,14 @@
 'use strict';
 
 module.exports = (hexo) => {
-  const isZh = hexo.config.language.search(/zh-CN/i) !== -1;
+  const isZh = hexo.theme.i18n.languages[0].search(/zh-CN/i) !== -1;
 
   // Breaking change at v1.8.3 2020/09/03
   if (hexo.theme.config.highlight && !hexo.theme.config.code) {
     if (isZh) {
       hexo.log.warn('[Fluid] 检测到弃用的配置项: "highlight" 已被修改为 "code:highlight"，请根据新版本更新');
     } else {
-      hexo.log.warn('[Fluid] Deprecated config detected: "highlight" has been modified to "code:highlight", please update with the release.');
+      hexo.log.warn('[Fluid] Deprecated config detected: "highlight" has been modified to "code:highlight", please update according to the release.');
     }
     hexo.theme.config.code = {
       copy_btn : hexo.theme.config.highlight.copy_btn,
@@ -39,8 +39,26 @@ module.exports = (hexo) => {
     }
   }
 
-  // Breaking change at v1.8.6 2020/11/30
+  // Breaking change at v1.8.7 2020/12/02
   if (hexo.theme.config.index.post_default_img) {
+    if (isZh) {
+      hexo.log.warn('[Fluid] 检测到弃用的配置项: "index:post_default_img" 已被修改为 "post:default_index_img"，请根据新版本更新');
+    } else {
+      hexo.log.warn('[Fluid] Deprecated config detected: "index:post_default_img" has been modified to "post:default_index_img", please update according to the release.');
+    }
     hexo.theme.config.post.default_index_img = hexo.theme.config.index.post_default_img;
+  }
+
+  // Breaking change at v1.8.7 2020/12/10
+  if (hexo.theme.config.banner_parallax) {
+    if (isZh) {
+      hexo.log.warn('[Fluid] 检测到弃用的配置项: "banner_parallax" 已被修改为 "banner:parallax"，请根据新版本更新');
+    } else {
+      hexo.log.warn('[Fluid] Deprecated config detected: "banner_parallax" has been modified to "banner:parallax", please update according to the release.');
+    }
+    if (!hexo.theme.config.banner) {
+      hexo.theme.config.banner = {};
+    }
+    hexo.theme.config.banner.parallax = hexo.theme.config.banner_parallax;
   }
 };

@@ -111,7 +111,7 @@ fun_features:
     height_px: 3
     color: "#29d"
     # See: https://github.com/rstacruz/nprogress
-    options: { showSpinner: false, trickleSpeed: 200 }
+    options: { showSpinner: false, trickleSpeed: 100 }
 
 # 主题暗色模式，开启后菜单中会出现切换按钮，用户浏览器会存储切换选项，并且会遵循 prefers-color-scheme 自动切换
 # Theme dark mode. If enable, a switch button will appear on the menu, each of the visitor's browser will store his switch option
@@ -318,6 +318,17 @@ search:
   # If true, search will scan the post content
   content: true
 
+# 首屏图片的相关配置
+# Config of the big image on the first screen
+banner:
+  # 视差滚动，图片与板块会随着屏幕滚动产生视差效果
+  # Scrolling parallax
+  parallax: true
+
+  # 图片最小的宽高比，以免图片两边被过度裁剪，适用于移动端竖屏时，如需关闭设为 0
+  # Minimum ratio of width to height, applicable to the vertical screen of mobile device, if you need to close it, set it to 0
+  width_height_ratio: 1.0
+
 # 向下滚动的箭头
 # Scroll down arrow
 scroll_down_arrow:
@@ -325,7 +336,8 @@ scroll_down_arrow:
 
   # 头图高度不小于指定比例，才显示箭头
   # Only the height of the banner image is greater than the ratio, the arrow is displayed
-  banner_height_limit: 90
+  # Available: 0 - 100
+  banner_height_limit: 80
 
   # 翻页后自动滚动
   # Auto scroll after page turning
@@ -335,10 +347,6 @@ scroll_down_arrow:
 # Scroll top arrow
 scroll_top_arrow:
   enable: true
-
-# 头图滚动视差
-# Banner image scrolling parallax
-banner_parallax: true
 
 
 #---------------------------
@@ -401,10 +409,6 @@ index:
   # Opacity of the banner mask, 1.0 is completely opaque
   # Available: 0 - 1.0
   banner_mask_alpha: 0.3
-
-    # 默认的文章封面图，当没有指定 index_img 时会使用该图片，若都为空则不显示任何图片
-  # Path of the default post cover when `index_img` is not set. If empty, no image will be displayed
-  post_default_img:
 
   # 首页副标题的独立设置
   # Independent config of home page subtitle
@@ -469,6 +473,10 @@ post:
   banner_img: https://cdn.jsdelivr.net/gh/hidaris/hidaris.github.io@master/img/bg.jpeg
   banner_img_height: 70
   banner_mask_alpha: 0.3
+
+  # 文章在首页的默认封面图，当没有指定 index_img 时会使用该图片，若两者都为空则不显示任何图片
+  # Path of the default post cover when `index_img` is not set. If both are empty, no image will be displayed
+  default_index_img:
 
   # 文章标题下方的元信息
   # Meta information below title
