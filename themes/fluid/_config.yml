@@ -26,7 +26,7 @@ apple_touch_icon: /img/favicon.png
 
 # 浏览器标签页中的标题分隔符，效果： 文章名 - 站点名
 # Title separator in browser tab, eg: article - site
-title_join_string: " - "
+tab_title_separator: " - "
 
 # 强制所有链接升级为 HTTPS（适用于图片等资源出现 HTTP 混入报错）
 # Force all links to be HTTPS (applicable to HTTP mixed error)
@@ -252,13 +252,26 @@ web_analytics:  # 网页访问统计
     # Only the Chinese mainland users need to set
     server_url:
 
-# 对页面中的图片进行懒加载处理，可见范围外的图片不会加载
-# Lazy loading of images on the page
+# 对页面中的图片和评论插件进行懒加载处理，可见范围外的元素不会提前加载
+# Lazy loading of images and comment plugin on the page
 lazyload:
   enable: true
-  # 懒加载仅对文章页生效，开启后如果自定义页面需要使用，可以在 Front-matter 里指定 `lazyload: true`
+
+  # 加载时的占位图片
+  # The placeholder image when loading
+  loading_img: /img/loading.gif
+
+  # 开启后懒加载仅在文章页生效，如果自定义页面需要使用，可以在 Front-matter 里指定 `lazyload: true`
   # If true, only enable lazyload on the post page. For custom pages, you can set 'lazyload: true' in front-matter
   onlypost: false
+
+  # 触发加载的偏移倍数，基数是视窗高度，可根据部署环境的请求速度调节
+  # The factor of viewport height that triggers loading
+  offset_factor: 2
+
+# 图标库，包含了大量社交类图标，主题依赖的不包含在内，因此可自行修改，详见 https://hexo.fluid-dev.com/docs/icon/
+# Icon library, which includes many social icons, does not include those theme dependent, so your can modify link by yourself. See: https://hexo.fluid-dev.com/docs/en/icon/
+iconfont: //at.alicdn.com/t/font_1736178_kmeydafke9r.css
 
 # 主题版本相关
 # Theme version
@@ -308,6 +321,7 @@ navbar:
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
 search:
   enable: true
+
   # 搜索索引文件的路径，可以是相对路径或外站的绝对路径
   # Path for search index file, it can be a relative path or an absolute path
   path: /local-search.xml
@@ -705,10 +719,12 @@ waline:
   pageSize: 10
   lang: zh-CN
   highlight: true
+  avatarCDN:
   avatarForce: false
   requiredFields: []
   emojiCDN: ''
   emojiMaps: {}
+  anonymous:
 
 # 畅言 Changyan
 # 基于第三方的服务
@@ -740,8 +756,9 @@ remark42:
 # Based on Tencent CloudBase
 # See: https://twikoo.js.org
 twikoo:
-  env_id:
-
+  envId:
+  region: ap-shanghai
+  path: window.location.pathname
 
 #---------------------------
 # 归档页
@@ -765,18 +782,23 @@ category:
   banner_mask_alpha: 0.3
   subtitle:
 
-  # 单个分类中折叠展示文章数的最大值，超过限制会显示 More
-  # The maximum number of posts in a single category. If the limit is exceeded, it will be displayed More
-  post_limit: 10
-
-  # 排序字段，前面带减号是倒序，不带减号是正序，可选项：name | length
-  # Sort field, with a minus sign is reverse order
-  # Options: name | length
+  # 分类的排序字段，前面带减号是倒序，不带减号是正序
+  # Sort field for categories, with a minus sign is reverse order
+  # Options: length | name
   order_by: "-length"
 
   # 层级的折叠深度，0 是全部折叠，大于 0 后如果存在子分类则默认展开
   # Collapse depth. If 0, all posts collapsed. If greater than 0, it will be expanded by default if there are subcategories
   collapse_depth: 0
+
+  # 文章的排序字段，前面带减号是倒序，不带减号是正序
+  # Sort field for posts, with a minus sign is reverse order
+  # Options: date | title | or other field of front-matter
+  post_order_by: "-date"
+
+  # 单个分类中折叠展示文章数的最大值，超过限制会显示 More，0 则不限制
+  # The maximum number of posts in a single category. If the limit is exceeded, it will be displayed More. If 0 no limit
+  post_limit: 10
 
 
 #---------------------------
@@ -806,10 +828,10 @@ about:
   banner_img: /img/default.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
-  subtitle:  # 打字机内容
+  subtitle:
   avatar: /img/avatar.png
   name: "Fluid"
-  introduce: "An elegant theme for Hexo"
+  intro: "An elegant theme for Hexo"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
   icons:
@@ -912,10 +934,6 @@ static_prefix:
   internal_css: /css
   internal_img: /img
 
-  # 图标库，包含了大量社交类图标，主题依赖的不包含在内，因此可自行修改，详见 https://hexo.fluid-dev.com/docs/icon/
-  # Icon library, which includes many social icons, does not include those theme dependent, so your can modify link by yourself. See: https://hexo.fluid-dev.com/docs/en/icon/
-  iconfont: //at.alicdn.com/t/font_1736178_kmeydafke9r.css
-
   anchor: https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/
 
   github_markdown: https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/
@@ -948,12 +966,12 @@ static_prefix:
 
   valine: https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/
 
-  waline: https://cdn.jsdelivr.net/npm/@waline/client@0.4.2/dist/
+  waline: https://cdn.jsdelivr.net/npm/@waline/client@0.14.8/dist/
 
   gitalk: https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/
 
   disqusjs: https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/
 
-  twikoo: https://cdn.jsdelivr.net/npm/twikoo@0.1.15/dist/
+  twikoo: https://cdn.jsdelivr.net/npm/twikoo@1.3.0/dist/
 
   hint: /lib/hint/
