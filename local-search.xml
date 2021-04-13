@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>一些关于 Smalltalk 的历史</title>
+    <link href="/2021/04/13/smalltalk/"/>
+    <url>/2021/04/13/smalltalk/</url>
+    
+    <content type="html"><![CDATA[<p>历史和动机<br>Smalltalk 的根源可回溯到七十年代早期，那时在 Xerox Palo Alto 研究中心 (Parc) 的 Dynabook 计划的环境下探索出的许多想法被结合到 Smalltalk/ObjectWorks 编程系统中。这个 “Dynabook” 基于一个梦想：成人和儿童拥有便宜的笔记本大小的个人计算机，有能力处理他们所有的与信息有关的需求。在加入 Xerox Parc 之前， 这个想法的主要倡导者 Alan Kay 工作在 Utah 大学，他在那里是开发 Flex 编程系统小组的成员，这个系统是针对灵活的面向模拟和图形的个人计算机的一个新颖的设计，有从 Simula 和 Sketchpad 演化来得许多想法。这时 Kay 向 Parc 的主管层建议扩充这个研究，他的设计完全超越了当时的计算机硬件和软件技术的接受能力。 Dynabook 基于的假定是有充足的内存和处理能力，还有可以感知手指触摸的一个平坦的屏幕显示器。为了声音再现而插入了一个立体声系统，为了访问大的共享数据库而设有到电话线的一个连接。Kay 坚信 Dynabook 会象 Gutenberg 发明印刷机之后个人可负担起的图书替代中世纪的手工文稿一样有革命性。他想象了在各种领域中使用这种设备的一个复合体，如绘制图片(比如给学前儿童)，信息存储(比如给博士)，音乐演奏 (比如给作曲家)，模型的动态模拟和图形动画(比如给教师)，在三维空间中物体的表示法(比如给建筑师)，或在一个公司内的库存和资金流通计算 (比如给商人)。为了完全开拓新媒介提供的潜在的交互，需要用户有一定程度的编程技巧。但是现存的编程语言是为专家设计的并在很大程度上只适合数值任务；在 Kay 看来严格的这种应用对希望使用 Dynabook 的工作方式是相对的无关紧要的。尽管 Lisp 家族中的语言提供了必要的符号处理能力，但仍然缺乏数据封装构造，并且不迎合由非专家用户来做容易的扩展。</p><p>所以开发一门新语言获得了优先权。与此同时 S. Papert 和一组其他研究人员也在制作叫做 Logo 的一个交互性的和高度图形化的基于计算机的学习环境，他们想用它来教儿童编程。Logo 基于 J. Piaget’s 在发展心理学上的工作，而 Kay 吸收了许多它的中心观念。在过程式语言中编程经常要求过程的精密组合，并且使这种构造工作的复杂性随程序的长度而呈指数增长。因为“动态”个人计算媒介的整体想法极度依赖的特征是让非专家做轻易的概念扩展，Kay 选择分层设计的积木方法，围绕封装和继承来建造。 Smalltalk 是最终形成的编程语言。它是完全基于对象和消息概念的第一个计算机语言。</p><p>Dynabook 计划从未成功完成，而许多今天的笔记本计算机已经达到和超过了它的最初目标。在这项计划存在那些年 Xerox Parc 做了许多研究，对计算机的很多领域有巨大影响。第一个实验实现运行在所谓的 Alto 工作站上，它是改装的 Data General Nova 小型机。后来被 Dorado 所替代，它是订制的和非常快的个人计算机。在开发的时候它们都是最新技术的计算机。在 Xerox Parc 的研究首创了在白色图形上的内存映射黑色输出 (替代了在黑色 CRT 显示器上的传统的绿色输出) 和局域网的以太网体系。在软件方面，用多于一个多年的周期率先实验了在基于窗口的、鼠标和菜单驱动的用户界面上的许多革新想法。</p><p>Smalltalk 作为 Dynabook 的编程工具，最初被构想为适合被儿童使用而无需预先的计算机知识的一门简单语言。名字的选择反映了这个意图。最初的 Smalltalk 系统是一千行的 Basic 程序，它在1972年10月成功的计算了 3+4 。两个月之后随后的一个汇编实现被称为 Smalltalk-72 系统。D. Ingalls 是这些系统的主要实现者。在 1974 年 Smalltalk 被移植到 Alto 计算机并进行许多建造图形用户界面的实验。应用程序包括海龟图形、一个鼠标驱动的程序编辑器，一个结构化图形编辑器，一个动画系统和一个音乐系统。Smalltalk-72 还作为向高中生教面向对象编程的实验程序的基础。Smalltalk-74 为位图映射图形 (类 BitBlt)和虚拟内存增加了更好的设施。这个改进的系统被用来实现一个信息检索系统和一个基于窗口的用户界面。Smalltalk-74 发展成了 Smalltalk-76，它基于一个更加清晰的设计。Smalltalk-76 还增加了继承的想法，它缺少两个早期的系统。计划了作为可移植实现的基础的“字节码”，而这个设计的一个宏代码模拟器导致了改进的性能。 Smalltalk-76 被多于 20 个人作为日常基本工具使用了 4 年。一个更干净的实现(Smalltalk-78) 最终导致了 Smalltalk-80，它是在 Xerox Parc 外部可获得的第一个系统。</p><p>在 Smalltalk 早期开发的 8 年间，“学习研究组”的成员偶尔的出版物和访问学者的报告引起了相当可观的兴趣。获取更详细的信息的尝试通常受挫。在 1979 和 1980 年 Xerox 最终允许 Smalltalk-80 公开发行。这个过程被计划为三个阶段: 一系列介绍文章，带有详细系统定义的一本书，和带有可移植实现的磁带。介绍文章以 Byte 的一个专刊出版。详细系统规定的计划被修订为四本的丛书。第一本 (叫作“蓝皮书”)描述语言和它的实现。第二本(叫作“橙皮书” )提供对 Smalltalk 的用户界面的详细讨论。第三本打算描述如何使用 Smalltalk 作为图形和交互应用的工具，第四本(叫作“绿皮书” ) 意图辅助实现者。不幸的是第三本从未出版 ，这在如何使用系统的文档中留下了长时间的空白。</p><p>可移植实现的软件被分为两个主要部分，虚拟机和虚拟映射。虚拟映射(VI) 是编码 Smalltalk 功能的一系列类。这包括数据结构的定义、图形和文本处理、编译器，反编译器、调试器、视图和用户界面支持。所有定义用 Smalltalk 自身给出，在这个意义上它是机器无关的，而编译器生成的代码是叫作“字节码”的中间代码 。虚拟机(VM) 形成每个实现的机器相关的部分，包括一个字节码解释器、一个存储管理器、和一些“原语”方法。只要能写出正确的虚拟机，Smalltalk 就可以移植到提供位映射图形和一个定点设备的任何平台上。Xerox 保留系统的版权并且禁止任何未经授权的复制。在尝试广泛的发行系统之前为了测试系统的可移植性，向一些计算机公司发出了适当的设备上开发领航实现的邀请是。四个接受邀请的公司最终生成了生产系统：Apple Computer、Digital Equipment、Hewlett Packard 和 Tektronix。这个过程从系统中铲除了一些错误并在 1983 年在更广泛的社区中发行了新版本 (VI2)。自从开始了系统的公开发行，Xerox Parc 开始与 Fairchild 实验室协作 AI 研究，为 Motorola 68000 微处理器的 Smalltalk 实现改进设计。这导致叫做“PS Smalltalk”的一个系统，这形成了 Parc Place 系统当前的 Smalltalk 产品的基础。Smalltalk 计划也在日本和欧洲发起。在一段时间内 Tektronix 保持在语言方面活跃的参与(involvement)并提供完全范围的基于 Smalltalk 的工作站。他们还支援了对系统作出了许多有趣的创新的一组研究者。Apple computers 对 Smalltalk 有强烈的兴趣。在80年代早期一些最初的学习研究组成员(包括 L. Tesler 和 D. Ingalls) 加入了 Apple ，努力设计和实现了强烈的基于来自 Smalltalk 环境的想法的一个新计算机体系。这个计划直接导致了 Lisa 和 Macintosh 微机。不要奇怪 Macintosh 的用户界面中的许多想法看起来非常类似于 Smalltalk。</p><p>在 IBM 设备上的那些早期的 Smalltalk 实现中，Digitalk Smalltalk V 是唯一幸存的。Smalltalk V 和后来的 Visual Smalltalk 把自己限制为非常简单的用户界面，很大程度上因为早期 IBM PC 硬件和 Microsoft  DOS 操作系统的限制，但售价非常合理。Xerox 自己在 Smalltalk 计划上只获得了稀少的收获。一些早期 Smalltalk 工作站(Xerox 1100 系列)售价过高而只售出很少。Star 机器是基于来自 Smalltalk 界面的想法的一个高级办公计算机，也由于同样的原因而从未流行。在 1987 年 Xerox 决定公司化它的 Smalltalk 利益。建立了叫作 Parc Place systems 的一个独立的公司，负责进一步开发和 Smalltalk 的许可与系统的发行。这个新公司雇用了最初的 Smalltalk 小组的一些成员并在各种计算机系统上发行了一些改进的实现 (VI 2.2 , 2.3, 2.4, 2.5)，如  Apple Macintosh、IBM PC 和 Sun 工作站。在 1990 年出品了一个新版本的 Smalltalk，叫做 ObjectWorks 和以后的 VisualWorks，提供了使用了主机的“本地”窗口管理器的有颜色的和可移植的界面。这要求在 Smalltalk 虚拟机和主机的操作系统之间作功能上的重大的重新安排，这导致了一个完全重新设计的语言，用它写成的应用程序在广泛的计算机设备上是高度可移植的。后来 Parc Place system 合并了 Digitalk，并且合并后的公司忙着做一个新的联合实现，代号叫“van Gogh”。 三年之后 IBM 也加入主要的 Smalltalk 厂商的行列。它的 VisualAge Smalltalk 与 VisualWorks 只有很少的区别。</p><p>但是上述的商业系统价格昂贵，从 1996 年起已经出现了一些公众域 Smalltalk 派生者如 Smalltalk X、Dorado Smalltalk 和 Squeak 。其中 Squeak 特别有趣，它在一小组研究者活跃的开发下，包括 Smalltalk 的最初建立者 Alan Kay 和 Dan Ingalls。这个计划由 Dan Ingalls 领导，而 Kay 以一个 Disney 成员的角色来支持它。在许多方面上 Squeak 代表了对最初的 Smalltalk 计划的价值的一个回归。它的设计基于 Smalltalk 2.5，扩张了更现代的彩色图形模型和实现技术。由于在继续进一步开发它，它可以迁移到其他的领域，例如它的最新实现包含一个实验的用户界面体系叫做 Morphic (吸纳自 Sun 的已停止了的 Self 计划)。 Squeak 可免费获得当前的实现，存在于 Macintosh 、Windows PC 和 Unix 系统上。还有一个 Squeak 邮件列表让它的用户社区及时了解最新的发展。</p><p>Squeak 被选择为 COSC205 的编程工具主要因为 Smalltalk 是有很少语法负担的纯面向对象语言，而 Squeak 提供了这个想法的一个可自由访问和移植的实现。还有它的简洁、效率和趣味 :)</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>为 Scratch 添加绿米扩展</title>
+    <link href="/2020/08/11/scratch-aqara/"/>
+    <url>/2020/08/11/scratch-aqara/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>种瓜上周末与 Aqara 开放平台工程师、CEO、几位董事以及其他的小伙伴碰了个面，一起讨论在 本月 18-19 号的 Aqara Home 中国服务商大会上 使用 CodeLab 创作平台做哪些有趣的演示，以及后续的合作可能: Aqara(绿米)智能家居用户(尤其是孩子)可在 CodeLab 创作平台上对智能设备进行编程，让人们将智能家庭改造为魔法世界吧！</p></blockquote><p>最近一周，我使用 ThingTalk 完成了 CodeLab 与 Aqara 的对接，这个 Scratch 扩展将会包含在 CodeLab 的下一次发布中，同时会出现在 Aqara 8 月中旬的服务商大会上。</p><p>CodeLab Neverland 里使用了不少的 Aqara 设备，并基于这些设备构建了许多好玩的实验，这些案例以及 Scratch Aqara 扩展的使用说明，我就偷懒直接从种瓜的博客转载过来了：</p><p>欢迎来到霍格沃茨：</p><video style="width:50%" controls>  <source src="https://adapter.codelab.club/video/wand.mp4" type="video/mp4">Your browser does not support the video tag.</video><p>在 Scratch 中构建控制房间里一切事物的 Siri:</p><video style="width:100%" controls>  <source src="https://adapter.codelab.club/video/1593328552202841.mp4" type="video/mp4">Your browser does not support the video tag.</video><p>下班打个响指关闭所有电灯</p><video style="width:100%" controls>  <source src="https://adapter.codelab.club/video/turnofflight_byfinger.mp4" type="video/mp4">Your browser does not support the video tag.</video><p>使用魔杖打开窗帘：</p><video style="width:100%" controls>  <source src="https://adapter.codelab.club/video/1576905337206766.mp4" type="video/mp4">Your browser does not support the video tag.</video><p>训练一个 AI 管家，它了解你的生活习惯，当你打开书时，自动为你把书房的灯打开；当你合上书思考时，为你关闭电灯，让你沉浸在黑暗中思考:</p><video style="width:100%" controls>  <source src="https://adapter.codelab.club/video/%E8%AF%BB%E4%B9%A6%E4%B8%8E%E6%80%9D%E8%80%83.mp4" type="video/mp4">Your browser does not support the video tag.</video><p>更多有趣案例请自行访问 CodeLab 的 <a href="https://adapter.codelab.club/user_guide/gallery/">项目展示页</a></p><h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><p>首先打开 CodeLab 创造平台的扩展页<br><img src="https://adapter.codelab.club/img/6f6fc565cbcff4105784b448c628c307.png"></p><h3 id="获取-token"><a href="#获取-token" class="headerlink" title="获取 token"></a>获取 token</h3><p>点击<code>打开绿米授权</code>积木，将打开登陆页面，使用 Aqara 账号登陆后，将获得一个 token。</p><h3 id="连接到云"><a href="#连接到云" class="headerlink" title="连接到云"></a>连接到云</h3><p>之后将 token 复制到连接积木里, 运行它即可。<br><img src="https://adapter.codelab.club/img/d9aefea95691b05581de0c8382168af4.png"></p><h3 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h3><p>构建一个入门程序: 当小猫被点击时，将灯泡打开<br><img src="https://adapter.codelab.club/img/ca0019da61b7c540b340665bed5c0c5e.png"></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.just4fun.site/post/%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B/release-3-5/#aqara">发布 CodeLab Adapter3.5</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>WoT</tag>
+      
+      <tag>Scratch</tag>
+      
+      <tag>CodeLab</tag>
+      
+      <tag>Aqara</tag>
+      
+      <tag>智能家居</tag>
+      
+      <tag>绿米</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>ThingTalk —— 一个 Web of things 的实现</title>
+    <link href="/2020/07/03/thingtalk/"/>
+    <url>/2020/07/03/thingtalk/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>WoT</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>什么是 Web of Things</title>
+    <link href="/2020/07/03/web-of-things-intro/"/>
+    <url>/2020/07/03/web-of-things-intro/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>前段时间向公司做了一个关于 Web of Things 的分享，本文内容编辑自当时的 PPT。</p></blockquote><h2 id="普适计算"><a href="#普适计算" class="headerlink" title="普适计算"></a>普适计算</h2><p>我们今天的物联网还处在非常原始的阶段，甚至不存在一个标准的定义，想要更好的理解物联网是什么，我们首先要了解一段历史，为什么要回顾这段历史呢？</p><p>我认为主要有两个价值：</p><ul><li>尽管我不是一个历史决定论者，但不可否认的是，回溯历史，了解技术概念出现和演变的内在逻辑，有助于我们展望未来。技术发展的内在规律总是惊人的相似，而通过对今天的合理演绎，我们也能够更好的判断物联网未来的趋势和机遇。</li><li>如今，物联网的概念仅仅是呈现给我们一个结果，但是只了解结果、不知晓逻辑和过程无异于囫囵吞枣，我们很难消化其中的设计思想。所以，了解其发展历史能够揭开演化过程中思想的碰撞。</li></ul><p>1988年，Mark Weiser 在施乐帕洛阿尔托研究中心(PARC)担任首席技术专家期间，创造了「无处不在的计算」（Ubiquitous computing）这个词。Weiser 思考计算机时代的下一个爆发点，并于1991年在「21 世纪的计算机」一文中写道：</p><blockquote><p>“影响最深远的技术是那些消失了的技术。它们把自己编织在日常生活的结构中，直到它们与我们的日常生活完全融合……相比之下，基于硅的信息技术离成为环境的一部分还差很远。超过 5000 万台个人电脑已被出售，尽管如此，计算机仍然在很大程度上是在一个自己的世界里。计算机领域充斥着许多复杂的术语，这些术语与用户实际想要使用它来做的事情毫无关系。”</p></blockquote><p>Weiser 比任何人都更早的看出这样一个趋势，电脑正从办公室里笨重的台式机朝着更小更智能的方向发展，之后将很快无缝嵌入我们周围的世界，融进我们的生活中。</p><p>但是，伟大的想法往往超前于时代，普适计算在当时并没有得到学界的认可，甚至被认为是无稽之谈。（做个背景补充：20世纪80，90年代，苹果公司刚刚才推出了自己的第一代可携带的苹果笔记本电脑。）在 1991 年后的几年，互联网得到了早期的发展，随着万维网的发展，互联网最终成为了一个大型开放的全球一体化计算机网络。</p><p>互联网的惊人成功让普适计算重新回到了人们的视野，许多研究人员开始考虑考虑将实物连接到互联网上，MIT 的 AutoID 实验室使用射频识别（RFID）标签来自动识别商品，打算建立一个电子标签产品的全球网络来优化物流和供应链，在描述这个全球网络时首次提出了物联网的术语。接下来的事情便众所周知了。</p><h2 id="物联网"><a href="#物联网" class="headerlink" title="物联网"></a>物联网</h2><p>物联网诞生之后，看中了它巨大潜力的公司们，都急于为它建立策略或解决方案，他们将建筑、供应链、工厂和办公室等一切通过某种通讯方式连接起来，收集它们产生的数据，然后展现给人看，并允许人们对这些东西进行操作。包括今天我们所看到的“智能”家居设备、智慧城市、智慧工厂等，看起来我们真正地做到了“物联网”。我们动动手指头就能在外遥控家里空调开关、监视生产活动的各项参数、数据，甚至可以“大数据”一番，创造不错的收益。</p><p>这个愿景听起来很美好，可惜的是，如果我们把“物联网”这个词拆开看，就会发现它联的“网”和我们平时所上的“网”是完全不同的两个东西。所以，今天的物联网与其说是物联网，不如说是物联局域网，因为它们是一堆功能与数据的孤岛，彼此之间不能互通共享。</p><p>人人都想从未来的发展中分一杯羹，这就导致了技术的碎片化：</p><ul><li>我的协议比你更好，重复发明协议以提高自己的影响力（<a href="https://en.wikipedia.org/wiki/List_of_automation_protocols">数以百计</a>），当大量的人力被用来重复发明轮子又使得创新减少。</li><li>聚焦于物联网的小问题，如硬件与数据处理，没有关注像建立一个端到端、可扩展的安全系统，将硬件、数据、处理过程、可视化及人机交互放在一起这样更大的图景。</li></ul><p>下面用两组智能家居的图说明这个现状：<br><img src="https://cdn.jsdelivr.net/gh/hidaris/hidaris.github.io@master/img/pre_iot.png" alt="pre_iot"><br><img src="https://cdn.jsdelivr.net/gh/hidaris/hidaris.github.io@master/img/post_iot.png" alt="post_iot"></p><p>针对这样的现状，WoT 协议的作者说了这么一句黑话：<br><img src="https://cdn.jsdelivr.net/gh/hidaris/hidaris.github.io@master/img/iot_complex.png" alt="iot_complex"></p><h3 id="无法联通的单品只是一个个分散的数据孤岛"><a href="#无法联通的单品只是一个个分散的数据孤岛" class="headerlink" title="无法联通的单品只是一个个分散的数据孤岛"></a>无法联通的单品只是一个个分散的数据孤岛</h3><p>技术的碎片化导致我们通过智能音响做得最多的操作，也不过是播放音乐、查看天气和设定闹钟；家里A品牌的智能机顶盒和B品牌的彩电不能兼容，C品牌的智能照明也不能被D品牌智能面板的控制。于是我们只能在手机里新建一个叫“智能家居”的文件夹，拖进去N个APP来控制N个品牌的智能单品。</p><p>单品与单品之间互不认识又导致了很多体验问题：</p><ul><li>门“不认识”灯，所以我们打开房间后，要伸手在黑暗中摸索电灯开关；</li><li>车库“不认识”热水器，所以我们在车库停好车回家后，要自己打开热水器，再坐等水热。</li><li>浴室镜子“不认识”淋浴喷头，所以我们洗完澡后，要自己用手抹去镜子上的水雾。 </li></ul><p>再者，对于一家想要布局智能化产品的企业来说，考虑成本往往只能购买一家公司的解决方案。但一家公司的方案又不能完全满足客户的全部需求，这时候要么考虑更换解决方案，花费不菲；要么找人整合方案，同样成本不低。</p><p>所以为了避免同质化，我们需要搞清：真正要解决的是什么问题，需要连接什么，为什么要连接它们？</p><h2 id="WoT"><a href="#WoT" class="headerlink" title="WoT"></a>WoT</h2><p>回答上一个问题：物联网面临的真实挑战与技术关系不大，与实际用例关系比较大。</p><p>那么是否有可靠的通讯协议可以供使用来解决碎片化问题，同时又可以降低开发门槛，能够让开发者更多的关注在用例上呢。所以 Web of Things，简称 WoT 出现了。WoT 决定审视和学习目前最成功的的万维网（World Wide Web，WWW），万维网具有规模，开放且易于参与，而且最重要的是，它是通用的。如果它能足够好的支持银行服务、游戏、聊天室并且改变传媒业，那么它为什么不能足够好的支持物联网呢？</p><p>所以当 IoT + Web，我们可以使用 HTTP 做设备之间的交互，使用 JSON 结构化描述数据，使用 TLS 保障传输安全性，使用 JWT 做认证。这些标准每天在全球范围内经手考验，已经非常成熟、被业界认可了。</p><p>仅仅如此吗？</p><blockquote><p>既然用 Web 技术，用 HTTP、JSON 这种应用层的协议就能统一物联网，难道不可以自己定一套基于 HTTP 和 JSON 的协议吗？这不是又导致碎片化了吗？</p></blockquote><p>WoT 相比于直接使用 Web，解决了设备之间的可发现、自描述和互操作问题，这些都需要精良的设计。</p><h3 id="可发现"><a href="#可发现" class="headerlink" title="可发现"></a>可发现</h3><p>可发现的需求来自于开箱即用，即一个 WoT 设备接入了网络后，以某种方式通知这个网络里的其它 WoT 设备自己的 IP 地址，目前 WoT 标准使用 mDNS 来让设备广播自己在局域网中的域名（URL）和地址。由于 WoT 本身是可被消费的应用层 API，UI 在获得对应服务的地址后可以根据 API 描述自动加载对应的控件。所以，对用户来说，添加一个 WoT 设备就像给电脑插一个 USB 设备一样简单。 </p><h3 id="自描述"><a href="#自描述" class="headerlink" title="自描述"></a>自描述</h3><p>为了避免分裂，在 WoT 中设备本身需要通过一些额外的信息来向另外一个设备描述自己，比如拥有什么属性，可以执行什么操作，等等；而描述这些信息的同时我们又要兼顾机器可读及人类可读，为了不给协议本身增加额外的负担，这些“资源”都是可以使用 URL（“统一资源定位符”）link 的。这种使用 URI 来描述互联网上资源的方式被称为关联数据（Linked Data），利用这一特性，我们就可以在 WoT 协议之中，关联用于定义协议本身的元数据（Schema）。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>物联网（IoT）具备发展为普适计算的潜力，但由于技术图景的碎片化而停滞不前。Web of Things 旨在解决物联网 (IoT) 的分裂问题，使构建用例变得更加容易，并且不需掌握各种复杂的物联网技术和标准，有许多行业将受益，例如 STEAM 教育，智能家居，智能城市，智能产业，智能农业，智能医疗等等。</p><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ol><li><a href="https://www.zhihu.com/question/26469697">Web of Things是什么？与IoT（物联网）有何区别？</a></li><li><a href="https://book.douban.com/subject/27624444/">从物联到万联：Node.js 与树莓派万维物联网构建实践</a></li><li><a href="https://webofthings.org/">Web of Things</a></li><li><a href="https://blog.just4fun.site/post/iot/introducing-webthings/">介绍 WebThings</a></li><li><a href="https://zhuanlan.zhihu.com/p/133719619">世界不是一台大iPhone！——谈万物互联的人机交互史</a></li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>WoT</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Reboot</title>
+    <link href="/2020/07/01/hello-world/"/>
+    <url>/2020/07/01/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>清理了旧文章。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Expression Problem 的另一个解法</title>
+    <link href="/2016/05/13/expression_problem/"/>
+    <url>/2016/05/13/expression_problem/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>The Expression Problem is a new name for an old problem. The goal is to define a datatype by cases, where one can add new cases to the datatype and new functions over the datatype, without recompiling existing code, and while retaining static type safety (e.g., no casts). — Philip Wadler</p></blockquote><p>首先，为了更直观的理解这个问题，我们来看一段用 Typed Racket 写的例子。</p><div class="code-wrapper"><pre><code class="hljs racket">(define-type Expr (U Lit Add))(struct Lit ([i : Integer]) #:transparent)(struct Add ([e1 : Expr] [e2 : Expr]) #:transparent)(: e : Expr)(define e (Add (Lit 1) (Add (Lit 1) (Lit 1))))(: eval : Expr -&gt; Integer)(define (eval e)  (match e    [(Lit i) i]    [(Add e1 e2)     (+ (eval e1) (eval e2))]))</code></pre></div><p>在这段代码中，我们定义了一个表达式类型 Expr，以及一个基于 Expr 类型进行模式匹配的函数 eval。然后，我们另写一个基于 Expr 类型的函数 view，它的作用是查看对应类型的字符串表示，定义如下：</p><div class="code-wrapper"><pre><code class="hljs racket">(: view : Expr -&gt; String)(define (view e)  (match e    [(Lit i) (number-&gt;string i)]    [(Add e1 e2) (string-append (view e1) &quot;+&quot; (view e2))]))</code></pre></div><p>通过这两个例子，我们可以看出添加一个函数并不会影响之前的函数，但是添加一个 construct 的情况就不一样了</p><div class="code-wrapper"><pre><code class="hljs racket">(define-type Expr (U Lit Add Mul))(struct Lit ([i : Integer]) #:transparent)(struct Add ([e1 : Expr] [e2 : Expr]) #:transparent)(struct Mul ([e1 : Expr] [e2 : Expr]) #:transparent)</code></pre></div><p>因为 Expr 中多了一个 Mul 类型，所以以 Expr 为参数类型的函数全都会受到影响。Why？因为模式匹配并没有 handle 那个新类型，所以为了修复这个问题，我们得改动所有的这些函数来添加对 Mul 类型的处理。</p><div class="code-wrapper"><pre><code class="hljs racket">(: eval : Expr -&gt; Integer)(define (eval e)  (match e    [(Lit i) i]    [(Add e1 e2)     (+ (eval e1) (eval e2))]    [(Mul e1 e2)     (* (eval e1) (eval e2))]))(: view : Expr -&gt; String)(define (view e)  (match e    [(Lit i) (number-&gt;string i)]    [(Add e1 e2) (string-append (view e1) &quot;+&quot; (view e2))]    [(Mul e1 e2) (string-append (view e1) &quot;*&quot; (view e2))]))</code></pre></div><p>这个问题就是经典的表达式问题，按照传统的抽象方法，我们会在 FP 中添加类型或者 OOP 中添加函数时遇到这个问题，我们先讨论 FP 的情况如何解决，然后进一步拓展到 OOP 中如何解决，对于这个问题，有许多先辈提出了一些解法，比如 Tagless-final，解决思路很有趣，但是今天我们来重新思考是否有其他解法，这个思考的过程比直接学会一个解法更重要。</p><p>我们定义的 Expr 类型是一个 Union type，在范畴论中，我们称之为 Coprodut， 从 wiki 中我们可以看出这种 关系和 Persistent Linked_list 是一种近似同构的关系。这里我开个玩笑，从中我们得到一个解决表达式问题的思路：Persistent Union Type，当然这是我生造的一个名词:) 在继续往下读前，请先阅读一遍我给出的两篇 wiki，内容不是很难理解，大概需要10分钟左右的时间。</p><p>OK，我们知道了 union type 和 persistent linked_lists 是一种同构关系，在链表前增加节点，对应到类型中，就是在原有的类型上并上一个新的 constructor，由于我们未丢失原来的结构，所以新链表与原有链表共享所有的旧节点，我们新的类型与原来的类型也共享同样的 constructor，对新的链表或类型进行的变换（函数）等价于对旧结构进行变换并加上新结构的变换，这里看两个相似的例子感受一下： 简单算术运算</p><div class="code-wrapper"><pre><code class="hljs racket">(x+y+z)*2 &#x3D; x*2+y*2+z*2          &#x3D; (x+y)*2+z*2</code></pre></div><p>链表操作</p><div class="code-wrapper"><pre><code class="hljs racket">(map (curry + 2) (quote 1 2 3)) &#x3D; (cons (+ 2 1)                                    (cons (+ 2 2)                                      (cons (+ 2 3)                                            empty)))                                &#x3D; (cons (+ 2 1) (map (curry + 2) (quote 2 3)))</code></pre></div><p>那么，我们来看看以这个思路，如何给 Expr 类型添加 Mul 拓展</p><div class="code-wrapper"><pre><code class="hljs racket">(define-type Expr (U Lit Add))(struct Lit ([i : Integer]) #:transparent)(struct Add ([e1 : Expr] [e2 : Expr]) #:transparent)(define-type Expr+Mul (U Expr Mul))(struct Mul ([e1 : Expr] [e2 : Expr]) #:transparent)</code></pre></div><p>可以将类型进一步展开</p><div class="code-wrapper"><pre><code class="hljs racket">;; Expr(U Lit Add);; Expr+Mul(U Lit Add Mul)</code></pre></div><p>类型是抽象值的集合，集合的并可以看做“加法”，也就是说我们直接在类型上做加法，然后可以看看相应的函数拓展：</p><div class="code-wrapper"><pre><code class="hljs racket">(define-type Expr (U Lit Add))(struct Lit ([v : Integer]) #:transparent)(struct Add ([e1 : Expr] [e2 : Expr]) #:transparent)(define-predicate Expr? Expr)(: eval-add : Exp -&gt; Integer)(define (eval-add e)  (match e    [(Lit n) n]    [(Add e1 e2) (+ (eval-add e1)                    (eval-add e2))]))(define-type Expr+Mul (U Exp Mul))(struct Mul ([e1 : Expr+Mul] [e2 : Expr+Mul]) #:transparent)(: eval-mul : Exp+Mul -&gt; Integer)(define (eval-mul e)  (cond    [(Exp? e) (eval-add e)]    [else     (match e       [(Mul e1 e2) (- (eval-mul e1)                       (eval-mul e2))])]))</code></pre></div><p>所以，问题到这里就解决了吗？我们将添加 construct 的操作看作类型上的加法，相应的函数也可以复用旧有的函数，一切似乎都 OK，但是这么做还有一个问题，如果我们给 Add 传递一个 Mul 类型的参数，会发现在函数eval-add 中没有 handle 这个类型。因为 Add 接受的是 Expr 类型，所以只接受 Val 和 Add，而扩展后的 Expr 名变成了 Expr+Mul，我们希望的是能够扩展 Expr 类型而不改变它的名字，这听起来像什么？没错，像在面向对象中声明一个接口，然后给它添加一个新的实现，这在 FP 中叫做 subtype。因此，我们可以将 Expr 的定义以这种方式修改下：</p><div class="code-wrapper"><pre><code class="hljs racket">(struct Expr ())(struct Val Expr ([v : Integer]) #:transparent)(struct Add Expr ([e1 : Expr] [e2 : Expr]) #:transparent)</code></pre></div><p>上述的新做法是定义一个 Expr 类型，然后将 Val，Add 分别作为它的 subtype，现在可以为它定义 eval 函数了</p><div class="code-wrapper"><pre><code class="hljs racket">(: eval : Exp -&gt; Integer)(define (eval e)  (match e    [(Val n) n]    [(Add e1 e2) (+ (eval e1)                    (eval e2))]));; test(&#x3D; (eval (Add (Val 2) (Val 3))) 5) ; return true</code></pre></div><p>定义了 eval 后，我们得扩展 Expr，给它添加一个新的 subtype，Mul：</p><div class="code-wrapper"><pre><code class="hljs racket">(struct Mul Expr ([e1 : Expr] [e2 : Expr]) #:transparent)</code></pre></div><p>最终，我们要扩展 eval，使它能够 handle Mul 类型，如何做呢？如果采取我们之前的做法</p><div class="code-wrapper"><pre><code class="hljs racket">(: evalM (-&gt; Expr Integer))(define (evalM e)  (cond    [(Expr? e) (eval e)]    [(Mul? e) (- (eval (Mul-e1 e))                 (eval (Mul-e2 e)))]))</code></pre></div><p>TR 会给你一个error: match: no matching clause for (Mul …，因为现在 Expr 包括了 Mul，所以 Mul 这一行永远执行不到，那么我们调整一下cond分支的顺序，先处理 Mul 然后再处理剩下的 Val 或者 Add：</p><div class="code-wrapper"><pre><code class="hljs racket">(: evalM (-&gt; Expr Integer))(define (evalM e)  (cond    [(Mul? e) (- (eval (Mul-e1 e))                 (eval (Mul-e2 e)))]    [(Expr? e) (eval e)]))</code></pre></div><p>现在，我们可以对(Mul (Add (Val 3) (Val 2)) (Val 1))这样的类型求值了，但是如果 Mul 出现在 Add 的参数中，则求值依旧会失败，因为匹配到 Add 时，我们使用的是 eval 方法，而 eval 不能 handle Mul 类型，所以我们需要一个可扩展的函数,Racket 自身并没有提供这种函数的定义方式。我们可以安装extensible-functions这个包，本来我也不知道这个包的存在，在写了这篇博客的早期，我大体想过如何解决这个问题，就是利用 Racket 的Macro在compile time将原来的函数 eval 复制到新函数 evalM 中，并且统一名字为 evalM，也就是说虽然我们在用户代码看到的是简单的对 eval 的扩展，但实际上这个函数已经被转换成：</p><div class="code-wrapper"><pre><code class="hljs racket">(: eval : Expr -&gt; Integer)(define (eval e)  (match e    [(Val n) n]    [(Add e1 e2) (+ (eval e1)                    (eval e2))]    [(Mul e1 e2) (- (eval e1)                    (eval e2))]))</code></pre></div><p>因为代码的转换以及类型的检查都在compile time发生，所以我们并没有破坏类型的安全性。但是由于我不太喜欢调试宏，就一直坑在这儿，直到前不久看到 @leafac 的这个包，才发现原来 Maryland University 也有人有过相似的想法，现在来看看最终的解法：</p><div class="code-wrapper"><pre><code class="hljs racket">(define&#x2F;match&#x2F;extensible (eval e)  : (-&gt; Expr Integer)  [((Val n)) n]  [((Add e1 e2)) (+ (eval e1)                    (eval e2))])(define&#x2F;match&#x2F;extension&#x2F;eval  [((Mul e1 e2)) (- (eval e1)                    (eval e2))]);; test(&#x3D; (eval (Add (Mul (Val 3) (Val 2)) (Val 1))) 2)</code></pre></div><p>本篇到这里就结束了，如果你想进一步了解 EP 的其他解法，可以顺着 wiki 看看已经发表的相关论文，如果对于如何在 OOP 中解决这个问题感兴趣请阅读我的另一篇文章 From FP to OOP, a.k.a Patterns。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>FP</tag>
+      
+      <tag>PL</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
