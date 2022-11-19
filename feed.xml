@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-11-19T05:27:16+00:00</updated><id>/feed.xml</id><title type="html">Accel World</title><subtitle>An amazing website.</subtitle><author><name>hidaris</name></author><entry><title type="html">终极显示</title><link href="/the-ultimate-display/" rel="alternate" type="text/html" title="终极显示" /><published>2022-04-07T10:00:00+00:00</published><updated>2022-04-07T10:00:00+00:00</updated><id>/the-ultimate-display</id><content type="html" xml:base="/the-ultimate-display/"><![CDATA[<p>(((1965年的这篇著名的论文是新兴技术的一个种子炸弹。对于增强现实来说，这相当于范尼瓦尔-布什关于计算机网络的著名论文 “As We May Think”（1945）。)))</p>
+
+<h1 class="text-center" id="终极显示">终极显示</h1>
+
+<p class="text-right">伊万-E-萨瑟兰</p>
+<p class="text-right">信息处理技术办公室，ARPA，OSD</p>
+
+<p>我们生活在一个物理世界中，通过长期的熟悉，我们已经很了解这个世界的特性。我们对这个物理世界有一种参与感，这使我们有能力很好地预测其属性。例如，我们可以预测物体会落在哪里，众所周知的形状从其他角度看起来如何，以及在摩擦力的作用下推动物体需要多大的力量。</p>
+
+<p>我们对带电粒子上的力、非均匀场中的力、非投影几何变换的影响以及高惯量、低摩擦的运动缺乏相应的熟悉度。连接到数字计算机的显示器给了我们一个机会来熟悉在物理世界中无法实现的概念。它是进入数学仙境的一面镜子。</p>
+
+<p>今天的计算机显示器涵盖了各种不同的功能。有些只具有绘制点的基本能力。现在出售的显示器一般都有内置的画线能力。绘制简单曲线的能力将是非常有用的。一些现有的显示器能够在任意方向上绘制非常短的线段，以形成字符或更复杂的曲线。这些能力中的每一项都有其历史和已知用途。</p>
+
+<p>计算机同样可以构建由彩色区域组成的图片。Knowlton的电影语言，BEFLIX[1]，((MPEG, AVI, .mov))是一个很好的例子，说明计算机可以产生区域填充的图片。今天，没有任何商业化的显示器有能力呈现这样的区域填充图片供人类直接使用。新的显示设备很可能会有区域填充的能力。关于如何很好地利用这种新能力，我们还有很多东西要学。</p>
+
+<p>今天最常见的计算机直接输入是打字机键盘。打字机价格低廉，性能可靠，而且能产生容易传输的信号。随着越来越多的在线系统的使用，很可能会有更多的打字机控制台投入使用。明天的计算机用户将通过打字机与计算机互动。他应该知道如何触摸打字。(((用他的拇指，在一个火柴盒大小的 “打字机 “触摸屏上。))</p>
+
+<p>其他各种手动输入设备也是可能的。光笔或RAND平板电脑的手写笔在指点显示的项目和绘图或打印输入电脑方面有非常有用的功能。通过这些设备与计算机进行非常流畅的互动的可能性才刚刚开始被利用。(((Mouse, trackpad.)))</p>
+
+<p>RAND公司今天有一个调试工具在运行，它可以识别打印出来的寄存器内容的变化，以及简单的指向和移动动作来进行格式重定位。使用兰德公司的技术，你可以改变屏幕上打印的数字，只需在上面写上你想要的东西。如果你想把一个显示的寄存器的内容移到另一个，只需指向第一个，然后把它 “拖 “到第二个。((“Drag and drop.”))这样一个交互系统让用户与计算机交互的便利性是显著的。</p>
+
+<p>各种各样的旋钮和操纵杆（（”旋钮和操纵杆”））在调整一些正在进行的计算的参数方面起到了有用的作用。例如，调整透视图的观察角度可以通过一个三旋转的操纵杆方便地处理。(((AR-capable mobile with compass, GPS, accelerometer.))带灯的按钮通常很有用。(((Power button, mobile keypad.))不应忽视音节式的语音输入。(((语音识别。))</p>
+
+<p>在许多情况下，计算机程序需要知道这个人指的是图片的哪一部分。(((图像注册，注视跟踪。))图片的二维性质使得图片的各个部分不可能按邻域来排序。因此，从显示坐标转换到找到所指向的物体是一个耗时的过程。光笔可以在显示电路传输被指向的物品时中断，从而自动显示其地址和坐标。RAND平板电脑或其他位置输入设备上的特殊电路可以使其发挥同样的功能。</p>
+
+<p>程序实际上需要知道的是这个人所指向的结构在内存中的什么位置。在一个有自己内存的显示器中，一个光笔回车可以告诉你所指向的东西在显示器文件中的位置，但不一定是在主内存中的位置。更糟糕的是，程序真的需要知道这个人指的是哪个部分的哪个子部分。没有任何现有的显示设备能计算出所需的递归深度。带有模拟存储器的新显示器很可能完全失去了指向的能力。(((他们做到了，同时也失去了模拟存储器。))</p>
+
+<h2 id="其他类型的显示">其他类型的显示</h2>
+
+<p>如果显示器的任务是作为进入计算机内存中构建的数学仙境的望远镜，它应该尽可能多地服务于各种感官。据我所知，没有人认真提出计算机显示气味或味道。优秀的音频显示已经存在，但不幸的是，我们几乎没有能力让计算机产生有意义的声音。我想为你描述一种体感显示。(((现在还不存在。)))</p>
+
+<p>移动操纵杆所需的力可以由计算机控制，就像改变Link Trainer的控制装置的驱动力以提供真实飞机的感觉一样。有了这样的显示，电场中的粒子的计算机模型可以将移动电荷的位置的手动控制与电荷上的力的感觉结合起来，并对电荷的位置进行视觉展示。相当复杂的具有力反馈能力的 “操纵杆 “已经存在。((任天堂Wii。))例如，通用电气公司的 “勤杂工 “的控制装置只不过是操纵杆，其自由度几乎与人的手臂一样多。通过使用这种输入/输出设备，我们可以在我们的视觉和听觉能力上增加一个力的显示。</p>
+
+<p>计算机可以很容易地感知我们身体几乎任何肌肉的位置。到目前为止，只有手和胳膊的肌肉被用于计算机控制。虽然我们对它们的灵巧性很高，以至于它们是一个自然的选择，但没有理由让它们成为唯一的。(((手势界面。)))我们的眼睛的灵活性也很高。感知和解释眼睛运动数据的机器可以而且将会被制造出来。(((Eye-tracking.))我们是否能用眼神的语言来控制计算机，还有待观察。一个有趣的实验是使显示的内容取决于我们看的地方。(((44年后仍然是一个有趣的实验。))</p>
+
+<p>例如，想象一个三角形，无论你看它的哪一个角，都会变成圆的。这样的三角形会是什么样子？这样的实验不仅会带来控制机器的新方法，而且还会带来对视觉机制的有趣理解。</p>
+
+<p>没有理由让计算机所显示的物体必须遵循我们所熟悉的物理现实的普通规则。(((Super-Mario, Grand Theft Auto.))运动学显示可能被用来模拟一个负质量的运动。今天的一个视觉显示器的用户可以很容易地使固体物体变得透明–他可以 “看穿物质！”(((Augmented reality urbanware.))</p>
+
+<p>以前从未有任何视觉表现的概念可以被显示出来，例如Sketchpad中的 “约束”[2]。通过对这种数学现象的显示，我们可以学会了解它们，就像了解我们自己的自然世界一样。这种知识是计算机显示的主要承诺。</p>
+
+<p>当然，最终的展示将是一个房间，在这个房间里计算机可以控制物质的存在。在这样的房间里展示的椅子将足以坐上去。在这样的房间里显示的手铐将是禁锢的，而在这样的房间里显示的子弹将是致命的。通过适当的编程，这样的显示器可以真正成为爱丽丝走入的仙境。 ((((这里有一个60年代的梦幻般的猛烈爆发。)))</p>]]></content><author><name>hidaris</name></author><summary type="html"><![CDATA[(((1965年的这篇著名的论文是新兴技术的一个种子炸弹。对于增强现实来说，这相当于范尼瓦尔-布什关于计算机网络的著名论文 “As We May Think”（1945）。)))]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="/jekyll/update/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2021-11-07T07:33:01+00:00</published><updated>2021-11-07T07:33:01+00:00</updated><id>/jekyll/update/welcome-to-jekyll</id><content type="html" xml:base="/jekyll/update/welcome-to-jekyll/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+
+<p>Jekyll requires blog post files to be named according to the following format:</p>
+
+<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
+
+<p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+
+<p>Jekyll also offers powerful support for code snippets:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name>hidaris</name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated. Jekyll requires blog post files to be named according to the following format: YEAR-MONTH-DAY-title.MARKUP Where YEAR is a four-digit number, MONTH and DAY are both two-digit numbers, and MARKUP is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works. Jekyll also offers powerful support for code snippets: def print_hi(name) puts "Hi, #{name}" end print_hi('Tom') #=&gt; prints 'Hi, Tom' to STDOUT. Check out the Jekyll docs for more info on how to get the most out of Jekyll. File all bugs/feature requests at Jekyll’s GitHub repo. If you have questions, you can ask them on Jekyll Talk.]]></summary></entry><entry><title type="html">什么是 Web of Things</title><link href="/web-of-things/" rel="alternate" type="text/html" title="什么是 Web of Things" /><published>2020-07-03T10:00:00+00:00</published><updated>2020-07-03T10:00:00+00:00</updated><id>/web-of-things</id><content type="html" xml:base="/web-of-things/"><![CDATA[<blockquote>
+  <p>前段时间向公司做了一个关于 Web of Things 的分享，本文内容编辑自当时的 PPT。</p>
+</blockquote>
+
+<h2 id="普适计算">普适计算</h2>
+<p>我们今天的物联网还处在非常原始的阶段，甚至不存在一个标准的定义，想要更好的理解物联网是什么，我们首先要了解一段历史，为什么要回顾这段历史呢？</p>
+
+<p>我认为主要有两个价值：</p>
+<ul>
+  <li>尽管我不是一个历史决定论者，但不可否认的是，回溯历史，了解技术概念出现和演变的内在逻辑，有助于我们展望未来。技术发展的内在规律总是惊人的相似，而通过对今天的合理演绎，我们也能够更好的判断物联网未来的趋势和机遇。</li>
+  <li>如今，物联网的概念仅仅是呈现给我们一个结果，但是只了解结果、不知晓逻辑和过程无异于囫囵吞枣，我们很难消化其中的设计思想。所以，了解其发展历史能够揭开演化过程中思想的碰撞。</li>
+</ul>
+
+<p>1988年，Mark Weiser 在施乐帕洛阿尔托研究中心(PARC)担任首席技术专家期间，创造了「无处不在的计算」（Ubiquitous computing）这个词。Weiser 思考计算机时代的下一个爆发点，并于1991年在「21 世纪的计算机」一文中写道：</p>
+
+<blockquote>
+  <p>“影响最深远的技术是那些消失了的技术。它们把自己编织在日常生活的结构中，直到它们与我们的日常生活完全融合……相比之下，基于硅的信息技术离成为环境的一部分还差很远。超过 5000 万台个人电脑已被出售，尽管如此，计算机仍然在很大程度上是在一个自己的世界里。计算机领域充斥着许多复杂的术语，这些术语与用户实际想要使用它来做的事情毫无关系。”</p>
+</blockquote>
+
+<p>Weiser 比任何人都更早的看出这样一个趋势，电脑正从办公室里笨重的台式机朝着更小更智能的方向发展，之后将很快无缝嵌入我们周围的世界，融进我们的生活中。</p>
+
+<p>但是，伟大的想法往往超前于时代，普适计算在当时并没有得到学界的认可，甚至被认为是无稽之谈。（做个背景补充：20世纪80，90年代，苹果公司刚刚才推出了自己的第一代可携带的苹果笔记本电脑。）在 1991 年后的几年，互联网得到了早期的发展，随着万维网的发展，互联网最终成为了一个大型开放的全球一体化计算机网络。</p>
+
+<p>互联网的惊人成功让普适计算重新回到了人们的视野，许多研究人员开始考虑考虑将实物连接到互联网上，MIT 的 AutoID 实验室使用射频识别（RFID）标签来自动识别商品，打算建立一个电子标签产品的全球网络来优化物流和供应链，在描述这个全球网络时首次提出了物联网的术语。接下来的事情便众所周知了。</p>
+
+<h2 id="物联网">物联网</h2>
+<p>物联网诞生之后，看中了它巨大潜力的公司们，都急于为它建立策略或解决方案，他们将建筑、供应链、工厂和办公室等一切通过某种通讯方式连接起来，收集它们产生的数据，然后展现给人看，并允许人们对这些东西进行操作。包括今天我们所看到的“智能”家居设备、智慧城市、智慧工厂等，看起来我们真正地做到了“物联网”。我们动动手指头就能在外遥控家里空调开关、监视生产活动的各项参数、数据，甚至可以“大数据”一番，创造不错的收益。</p>
+
+<p>这个愿景听起来很美好，可惜的是，如果我们把“物联网”这个词拆开看，就会发现它联的“网”和我们平时所上的“网”是完全不同的两个东西。所以，今天的物联网与其说是物联网，不如说是物联局域网，因为它们是一堆功能与数据的孤岛，彼此之间不能互通共享。</p>
+
+<p>人人都想从未来的发展中分一杯羹，这就导致了技术的碎片化：</p>
+<ul>
+  <li>我的协议比你更好，重复发明协议以提高自己的影响力（<a href="https://en.wikipedia.org/wiki/List_of_automation_protocols">数以百计</a>），当大量的人力被用来重复发明轮子又使得创新减少。</li>
+  <li>聚焦于物联网的小问题，如硬件与数据处理，没有关注像建立一个端到端、可扩展的安全系统，将硬件、数据、处理过程、可视化及人机交互放在一起这样更大的图景。</li>
+</ul>
+
+<p>下面用两组智能家居的图说明这个现状：
+<img src="https://cdn.jsdelivr.net/gh/hidaris/hidaris.github.io@master/img/pre_iot.png" alt="pre_iot" />
+<img src="https://cdn.jsdelivr.net/gh/hidaris/hidaris.github.io@master/img/post_iot.png" alt="post_iot" /></p>
+
+<p>针对这样的现状，WoT 协议的作者说了这么一句黑话：
+<img src="https://cdn.jsdelivr.net/gh/hidaris/hidaris.github.io@master/img/iot_complex.png" alt="iot_complex" /></p>
+
+<h3 id="无法联通的单品只是一个个分散的数据孤岛">无法联通的单品只是一个个分散的数据孤岛</h3>
+<p>技术的碎片化导致我们通过智能音响做得最多的操作，也不过是播放音乐、查看天气和设定闹钟；家里A品牌的智能机顶盒和B品牌的彩电不能兼容，C品牌的智能照明也不能被D品牌智能面板的控制。于是我们只能在手机里新建一个叫“智能家居”的文件夹，拖进去N个APP来控制N个品牌的智能单品。</p>
+
+<p>单品与单品之间互不认识又导致了很多体验问题：</p>
+<ul>
+  <li>门“不认识”灯，所以我们打开房间后，要伸手在黑暗中摸索电灯开关；</li>
+  <li>车库“不认识”热水器，所以我们在车库停好车回家后，要自己打开热水器，再坐等水热。</li>
+  <li>浴室镜子“不认识”淋浴喷头，所以我们洗完澡后，要自己用手抹去镜子上的水雾。</li>
+</ul>
+
+<p>再者，对于一家想要布局智能化产品的企业来说，考虑成本往往只能购买一家公司的解决方案。但一家公司的方案又不能完全满足客户的全部需求，这时候要么考虑更换解决方案，花费不菲；要么找人整合方案，同样成本不低。</p>
+
+<p>所以为了避免同质化，我们需要搞清：真正要解决的是什么问题，需要连接什么，为什么要连接它们？</p>
+
+<h2 id="wot">WoT</h2>
+<p>回答上一个问题：物联网面临的真实挑战与技术关系不大，与实际用例关系比较大。</p>
+
+<p>那么是否有可靠的通讯协议可以供使用来解决碎片化问题，同时又可以降低开发门槛，能够让开发者更多的关注在用例上呢。所以 Web of Things，简称 WoT 出现了。WoT 决定审视和学习目前最成功的的万维网（World Wide Web，WWW），万维网具有规模，开放且易于参与，而且最重要的是，它是通用的。如果它能足够好的支持银行服务、游戏、聊天室并且改变传媒业，那么它为什么不能足够好的支持物联网呢？</p>
+
+<p>所以当 IoT + Web，我们可以使用 HTTP 做设备之间的交互，使用 JSON 结构化描述数据，使用 TLS 保障传输安全性，使用 JWT 做认证。这些标准每天在全球范围内经手考验，已经非常成熟、被业界认可了。</p>
+
+<p>仅仅如此吗？</p>
+<blockquote>
+  <p>既然用 Web 技术，用 HTTP、JSON 这种应用层的协议就能统一物联网，难道不可以自己定一套基于 HTTP 和 JSON 的协议吗？这不是又导致碎片化了吗？</p>
+</blockquote>
+
+<p>WoT 相比于直接使用 Web，解决了设备之间的可发现、自描述和互操作问题，这些都需要精良的设计。</p>
+
+<h3 id="可发现">可发现</h3>
+<p>可发现的需求来自于开箱即用，即一个 WoT 设备接入了网络后，以某种方式通知这个网络里的其它 WoT 设备自己的 IP 地址，目前 WoT 标准使用 mDNS 来让设备广播自己在局域网中的域名（URL）和地址。由于 WoT 本身是可被消费的应用层 API，UI 在获得对应服务的地址后可以根据 API 描述自动加载对应的控件。所以，对用户来说，添加一个 WoT 设备就像给电脑插一个 USB 设备一样简单。</p>
+
+<h3 id="自描述">自描述</h3>
+<p>为了避免分裂，在 WoT 中设备本身需要通过一些额外的信息来向另外一个设备描述自己，比如拥有什么属性，可以执行什么操作，等等；而描述这些信息的同时我们又要兼顾机器可读及人类可读，为了不给协议本身增加额外的负担，这些“资源”都是可以使用 URL（“统一资源定位符”）link 的。这种使用 URI 来描述互联网上资源的方式被称为关联数据（Linked Data），利用这一特性，我们就可以在 WoT 协议之中，关联用于定义协议本身的元数据（Schema）。</p>
+
+<h2 id="总结">总结</h2>
+<p>物联网（IoT）具备发展为普适计算的潜力，但由于技术图景的碎片化而停滞不前。Web of Things 旨在解决物联网 (IoT) 的分裂问题，使构建用例变得更加容易，并且不需掌握各种复杂的物联网技术和标准，有许多行业将受益，例如 STEAM 教育，智能家居，智能城市，智能产业，智能农业，智能医疗等等。</p>
+
+<h2 id="引用">引用</h2>
+<ol>
+  <li><a href="https://www.zhihu.com/question/26469697">Web of Things是什么？与IoT（物联网）有何区别？
+</a></li>
+  <li><a href="https://book.douban.com/subject/27624444/">从物联到万联：Node.js 与树莓派万维物联网构建实践</a></li>
+  <li><a href="https://webofthings.org/">Web of Things</a></li>
+  <li><a href="https://blog.just4fun.site/post/iot/introducing-webthings/">介绍 WebThings</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/133719619">世界不是一台大iPhone！——谈万物互联的人机交互史
+</a></li>
+</ol>]]></content><author><name>hidaris</name></author><summary type="html"><![CDATA[前段时间向公司做了一个关于 Web of Things 的分享，本文内容编辑自当时的 PPT。]]></summary></entry><entry><title type="html">Expression Problem 的另一个解法</title><link href="/pl/expression-problem/" rel="alternate" type="text/html" title="Expression Problem 的另一个解法" /><published>2016-01-01T07:33:01+00:00</published><updated>2016-01-01T07:33:01+00:00</updated><id>/pl/expression-problem</id><content type="html" xml:base="/pl/expression-problem/"><![CDATA[<blockquote>
+  <p>The Expression Problem is a new name for an old problem. The goal is to define a datatype by cases, where one can add new cases to the datatype and new functions over the datatype, without recompiling existing code, and while retaining static type safety (e.g., no casts). — Philip Wadler</p>
+</blockquote>
+
+<p>首先，为了更直观的理解这个问题，我们来看一段用 Typed Racket 写的例子。</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">define-type</span> <span class="nv">Expr</span> <span class="p">(</span><span class="nf">U</span> <span class="nv">Lit</span> <span class="nv">Add</span><span class="p">))</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Lit</span> <span class="p">([</span><span class="nf">i</span> <span class="nv">:</span> <span class="nv">Integer</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Add</span> <span class="p">([</span><span class="nf">e1</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">]</span> <span class="p">[</span><span class="nf">e2</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nf">:</span> <span class="nv">e</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">)</span>
+<span class="p">(</span><span class="k">define</span> <span class="nv">e</span> <span class="p">(</span><span class="nf">Add</span> <span class="p">(</span><span class="nf">Lit</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nf">Add</span> <span class="p">(</span><span class="nf">Lit</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nf">Lit</span> <span class="mi">1</span><span class="p">))))</span>
+
+<span class="p">(</span><span class="nf">:</span> <span class="nv">eval</span> <span class="nv">:</span> <span class="nv">Expr</span> <span class="nv">-&gt;</span> <span class="nv">Integer</span><span class="p">)</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">match</span> <span class="nv">e</span>
+    <span class="p">[(</span><span class="nf">Lit</span> <span class="nv">i</span><span class="p">)</span> <span class="nv">i</span><span class="p">]</span>
+    <span class="p">[(</span><span class="nf">Add</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span>
+     <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e1</span><span class="p">)</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e2</span><span class="p">))]))</span>
+</code></pre></div></div>
+
+<p>在这段代码中，我们定义了一个表达式类型 Expr，以及一个基于 Expr 类型进行模式匹配的函数 eval。然后，我们另写一个基于 Expr 类型的函数 view，它的作用是查看对应类型的字符串表示，定义如下：</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">:</span> <span class="nv">view</span> <span class="nv">:</span> <span class="nv">Expr</span> <span class="nv">-&gt;</span> <span class="nv">String</span><span class="p">)</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">view</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">match</span> <span class="nv">e</span>
+    <span class="p">[(</span><span class="nf">Lit</span> <span class="nv">i</span><span class="p">)</span> <span class="p">(</span><span class="nb">number-&gt;string</span> <span class="nv">i</span><span class="p">)]</span>
+    <span class="p">[(</span><span class="nf">Add</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span> <span class="p">(</span><span class="nb">string-append</span> <span class="p">(</span><span class="nf">view</span> <span class="nv">e1</span><span class="p">)</span> <span class="s">"+"</span> <span class="p">(</span><span class="nf">view</span> <span class="nv">e2</span><span class="p">))]))</span>
+</code></pre></div></div>
+
+<p>通过这两个例子，我们可以看出添加一个函数并不会影响之前的函数，但是添加一个 construct 的情况就不一样了</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">define-type</span> <span class="nv">Expr</span> <span class="p">(</span><span class="nf">U</span> <span class="nv">Lit</span> <span class="nv">Add</span> <span class="nv">Mul</span><span class="p">))</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Lit</span> <span class="p">([</span><span class="nf">i</span> <span class="nv">:</span> <span class="nv">Integer</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Add</span> <span class="p">([</span><span class="nf">e1</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">]</span> <span class="p">[</span><span class="nf">e2</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Mul</span> <span class="p">([</span><span class="nf">e1</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">]</span> <span class="p">[</span><span class="nf">e2</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>因为 Expr 中多了一个 Mul 类型，所以以 Expr 为参数类型的函数全都会受到影响。Why？因为模式匹配并没有 handle 那个新类型，所以为了修复这个问题，我们得改动所有的这些函数来添加对 Mul 类型的处理。</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">:</span> <span class="nv">eval</span> <span class="nv">:</span> <span class="nv">Expr</span> <span class="nv">-&gt;</span> <span class="nv">Integer</span><span class="p">)</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">match</span> <span class="nv">e</span>
+    <span class="p">[(</span><span class="nf">Lit</span> <span class="nv">i</span><span class="p">)</span> <span class="nv">i</span><span class="p">]</span>
+    <span class="p">[(</span><span class="nf">Add</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span>
+     <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e1</span><span class="p">)</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e2</span><span class="p">))]</span>
+    <span class="p">[(</span><span class="nf">Mul</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span>
+     <span class="p">(</span><span class="nb">*</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e1</span><span class="p">)</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e2</span><span class="p">))]))</span>
+
+<span class="p">(</span><span class="nf">:</span> <span class="nv">view</span> <span class="nv">:</span> <span class="nv">Expr</span> <span class="nv">-&gt;</span> <span class="nv">String</span><span class="p">)</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">view</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">match</span> <span class="nv">e</span>
+    <span class="p">[(</span><span class="nf">Lit</span> <span class="nv">i</span><span class="p">)</span> <span class="p">(</span><span class="nb">number-&gt;string</span> <span class="nv">i</span><span class="p">)]</span>
+    <span class="p">[(</span><span class="nf">Add</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span> <span class="p">(</span><span class="nb">string-append</span> <span class="p">(</span><span class="nf">view</span> <span class="nv">e1</span><span class="p">)</span> <span class="s">"+"</span> <span class="p">(</span><span class="nf">view</span> <span class="nv">e2</span><span class="p">))]</span>
+    <span class="p">[(</span><span class="nf">Mul</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span> <span class="p">(</span><span class="nb">string-append</span> <span class="p">(</span><span class="nf">view</span> <span class="nv">e1</span><span class="p">)</span> <span class="s">"*"</span> <span class="p">(</span><span class="nf">view</span> <span class="nv">e2</span><span class="p">))]))</span>
+</code></pre></div></div>
+
+<p>这个问题就是经典的表达式问题，按照传统的抽象方法，我们会在 FP 中添加类型或者 OOP 中添加函数时遇到这个问题，我们先讨论 FP 的情况如何解决，然后进一步拓展到 OOP 中如何解决，对于这个问题，有许多先辈提出了一些解法，比如 Tagless-final，解决思路很有趣，但是今天我们来重新思考是否有其他解法，这个思考的过程比直接学会一个解法更重要。</p>
+
+<p>我们定义的 Expr 类型是一个 Union type，在范畴论中，我们称之为 Coprodut， 从 wiki 中我们可以看出这种 关系和 Persistent Linked_list 是一种近似同构的关系。这里我开个玩笑，从中我们得到一个解决表达式问题的思路：Persistent Union Type，当然这是我生造的一个名词:) 在继续往下读前，请先阅读一遍我给出的两篇 wiki，内容不是很难理解，大概需要10分钟左右的时间。</p>
+
+<p>OK，我们知道了 union type 和 persistent linked_lists 是一种同构关系，在链表前增加节点，对应到类型中，就是在原有的类型上并上一个新的 constructor，由于我们未丢失原来的结构，所以新链表与原有链表共享所有的旧节点，我们新的类型与原来的类型也共享同样的 constructor，对新的链表或类型进行的变换（函数）等价于对旧结构进行变换并加上新结构的变换，这里看两个相似的例子感受一下： 简单算术运算</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">x+y+z</span><span class="p">)</span><span class="nv">*2</span> <span class="nv">=</span> <span class="nv">x*2+y*2+z*2</span>
+          <span class="nv">=</span> <span class="p">(</span><span class="nf">x+y</span><span class="p">)</span><span class="nv">*2+z*2</span>
+</code></pre></div></div>
+
+<p>链表操作</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">map</span> <span class="p">(</span><span class="nf">curry</span> <span class="nv">+</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="k">quote</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">))</span> <span class="nv">=</span> <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nb">+</span> <span class="mi">2</span> <span class="mi">1</span><span class="p">)</span>
+                                    <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nb">+</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">)</span>
+                                      <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nb">+</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span>
+                                            <span class="nv">empty</span><span class="p">)))</span>
+                                <span class="nv">=</span> <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nb">+</span> <span class="mi">2</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nb">map</span> <span class="p">(</span><span class="nf">curry</span> <span class="nv">+</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="k">quote</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<p>那么，我们来看看以这个思路，如何给 Expr 类型添加 Mul 拓展</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">define-type</span> <span class="nv">Expr</span> <span class="p">(</span><span class="nf">U</span> <span class="nv">Lit</span> <span class="nv">Add</span><span class="p">))</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Lit</span> <span class="p">([</span><span class="nf">i</span> <span class="nv">:</span> <span class="nv">Integer</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Add</span> <span class="p">([</span><span class="nf">e1</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">]</span> <span class="p">[</span><span class="nf">e2</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">define-type</span> <span class="nv">Expr+Mul</span> <span class="p">(</span><span class="nf">U</span> <span class="nv">Expr</span> <span class="nv">Mul</span><span class="p">))</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Mul</span> <span class="p">([</span><span class="nf">e1</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">]</span> <span class="p">[</span><span class="nf">e2</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>可以将类型进一步展开</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">;; Expr</span>
+<span class="p">(</span><span class="nf">U</span> <span class="nv">Lit</span> <span class="nv">Add</span><span class="p">)</span>
+<span class="c1">;; Expr+Mul</span>
+<span class="p">(</span><span class="nf">U</span> <span class="nv">Lit</span> <span class="nv">Add</span> <span class="nv">Mul</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>类型是抽象值的集合，集合的并可以看做“加法”，也就是说我们直接在类型上做加法，然后可以看看相应的函数拓展：</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">define-type</span> <span class="nv">Expr</span> <span class="p">(</span><span class="nf">U</span> <span class="nv">Lit</span> <span class="nv">Add</span><span class="p">))</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Lit</span> <span class="p">([</span><span class="nf">v</span> <span class="nv">:</span> <span class="nv">Integer</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Add</span> <span class="p">([</span><span class="nf">e1</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">]</span> <span class="p">[</span><span class="nf">e2</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">define-predicate</span> <span class="nv">Expr?</span> <span class="nv">Expr</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nf">:</span> <span class="nv">eval-add</span> <span class="nv">:</span> <span class="nv">Exp</span> <span class="nv">-&gt;</span> <span class="nv">Integer</span><span class="p">)</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">eval-add</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">match</span> <span class="nv">e</span>
+    <span class="p">[(</span><span class="nf">Lit</span> <span class="nv">n</span><span class="p">)</span> <span class="nv">n</span><span class="p">]</span>
+    <span class="p">[(</span><span class="nf">Add</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span> <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nf">eval-add</span> <span class="nv">e1</span><span class="p">)</span>
+                    <span class="p">(</span><span class="nf">eval-add</span> <span class="nv">e2</span><span class="p">))]))</span>
+
+<span class="p">(</span><span class="nf">define-type</span> <span class="nv">Expr+Mul</span> <span class="p">(</span><span class="nf">U</span> <span class="nv">Exp</span> <span class="nv">Mul</span><span class="p">))</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Mul</span> <span class="p">([</span><span class="nf">e1</span> <span class="nv">:</span> <span class="nv">Expr+Mul</span><span class="p">]</span> <span class="p">[</span><span class="nf">e2</span> <span class="nv">:</span> <span class="nv">Expr+Mul</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nf">:</span> <span class="nv">eval-mul</span> <span class="nv">:</span> <span class="nv">Exp+Mul</span> <span class="nv">-&gt;</span> <span class="nv">Integer</span><span class="p">)</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">eval-mul</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">cond</span>
+    <span class="p">[(</span><span class="nf">Exp?</span> <span class="nv">e</span><span class="p">)</span> <span class="p">(</span><span class="nf">eval-add</span> <span class="nv">e</span><span class="p">)]</span>
+    <span class="p">[</span><span class="nf">else</span>
+     <span class="p">(</span><span class="nf">match</span> <span class="nv">e</span>
+       <span class="p">[(</span><span class="nf">Mul</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span> <span class="p">(</span><span class="nb">-</span> <span class="p">(</span><span class="nf">eval-mul</span> <span class="nv">e1</span><span class="p">)</span>
+                       <span class="p">(</span><span class="nf">eval-mul</span> <span class="nv">e2</span><span class="p">))])]))</span>
+</code></pre></div></div>
+
+<p>所以，问题到这里就解决了吗？我们将添加 construct 的操作看作类型上的加法，相应的函数也可以复用旧有的函数，一切似乎都 OK，但是这么做还有一个问题，如果我们给 Add 传递一个 Mul 类型的参数，会发现在函数eval-add 中没有 handle 这个类型。因为 Add 接受的是 Expr 类型，所以只接受 Val 和 Add，而扩展后的 Expr 名变成了 Expr+Mul，我们希望的是能够扩展 Expr 类型而不改变它的名字，这听起来像什么？没错，像在面向对象中声明一个接口，然后给它添加一个新的实现，这在 FP 中叫做 subtype。因此，我们可以将 Expr 的定义以这种方式修改下：</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">struct</span> <span class="nv">Expr</span> <span class="p">())</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Val</span> <span class="nv">Expr</span> <span class="p">([</span><span class="nf">v</span> <span class="nv">:</span> <span class="nv">Integer</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Add</span> <span class="nv">Expr</span> <span class="p">([</span><span class="nf">e1</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">]</span> <span class="p">[</span><span class="nf">e2</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>上述的新做法是定义一个 Expr 类型，然后将 Val，Add 分别作为它的 subtype，现在可以为它定义 eval 函数了</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">:</span> <span class="nv">eval</span> <span class="nv">:</span> <span class="nv">Exp</span> <span class="nv">-&gt;</span> <span class="nv">Integer</span><span class="p">)</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">match</span> <span class="nv">e</span>
+    <span class="p">[(</span><span class="nf">Val</span> <span class="nv">n</span><span class="p">)</span> <span class="nv">n</span><span class="p">]</span>
+    <span class="p">[(</span><span class="nf">Add</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span> <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e1</span><span class="p">)</span>
+                    <span class="p">(</span><span class="nb">eval</span> <span class="nv">e2</span><span class="p">))]))</span>
+<span class="c1">;; test</span>
+<span class="p">(</span><span class="nb">=</span> <span class="p">(</span><span class="nb">eval</span> <span class="p">(</span><span class="nf">Add</span> <span class="p">(</span><span class="nf">Val</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="nf">Val</span> <span class="mi">3</span><span class="p">)))</span> <span class="mi">5</span><span class="p">)</span> <span class="c1">; return true</span>
+</code></pre></div></div>
+
+<p>定义了 eval 后，我们得扩展 Expr，给它添加一个新的 subtype，Mul：</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">struct</span> <span class="nv">Mul</span> <span class="nv">Expr</span> <span class="p">([</span><span class="nf">e1</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">]</span> <span class="p">[</span><span class="nf">e2</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>最终，我们要扩展 eval，使它能够 handle Mul 类型，如何做呢？如果采取我们之前的做法</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">:</span> <span class="nv">evalM</span> <span class="p">(</span><span class="nf">-&gt;</span> <span class="nv">Expr</span> <span class="nv">Integer</span><span class="p">))</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">evalM</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">cond</span>
+    <span class="p">[(</span><span class="nf">Expr?</span> <span class="nv">e</span><span class="p">)</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e</span><span class="p">)]</span>
+    <span class="p">[(</span><span class="nf">Mul?</span> <span class="nv">e</span><span class="p">)</span> <span class="p">(</span><span class="nb">-</span> <span class="p">(</span><span class="nb">eval</span> <span class="p">(</span><span class="nf">Mul-e1</span> <span class="nv">e</span><span class="p">))</span>
+                 <span class="p">(</span><span class="nb">eval</span> <span class="p">(</span><span class="nf">Mul-e2</span> <span class="nv">e</span><span class="p">)))]))</span>
+</code></pre></div></div>
+
+<p>TR 会给你一个error: match: no matching clause for (Mul …，因为现在 Expr 包括了 Mul，所以 Mul 这一行永远执行不到，那么我们调整一下cond分支的顺序，先处理 Mul 然后再处理剩下的 Val 或者 Add：</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">:</span> <span class="nv">evalM</span> <span class="p">(</span><span class="nf">-&gt;</span> <span class="nv">Expr</span> <span class="nv">Integer</span><span class="p">))</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">evalM</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">cond</span>
+    <span class="p">[(</span><span class="nf">Mul?</span> <span class="nv">e</span><span class="p">)</span> <span class="p">(</span><span class="nb">-</span> <span class="p">(</span><span class="nb">eval</span> <span class="p">(</span><span class="nf">Mul-e1</span> <span class="nv">e</span><span class="p">))</span>
+                 <span class="p">(</span><span class="nb">eval</span> <span class="p">(</span><span class="nf">Mul-e2</span> <span class="nv">e</span><span class="p">)))]</span>
+    <span class="p">[(</span><span class="nf">Expr?</span> <span class="nv">e</span><span class="p">)</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e</span><span class="p">)]))</span>
+</code></pre></div></div>
+
+<p>现在，我们可以对(Mul (Add (Val 3) (Val 2)) (Val 1))这样的类型求值了，但是如果 Mul 出现在 Add 的参数中，则求值依旧会失败，因为匹配到 Add 时，我们使用的是 eval 方法，而 eval 不能 handle Mul 类型，所以我们需要一个可扩展的函数,Racket 自身并没有提供这种函数的定义方式。我们可以安装extensible-functions这个包，本来我也不知道这个包的存在，在写了这篇博客的早期，我大体想过如何解决这个问题，就是利用 Racket 的Macro在compile time将原来的函数 eval 复制到新函数 evalM 中，并且统一名字为 evalM，也就是说虽然我们在用户代码看到的是简单的对 eval 的扩展，但实际上这个函数已经被转换成：</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">:</span> <span class="nv">eval</span> <span class="nv">:</span> <span class="nv">Expr</span> <span class="nv">-&gt;</span> <span class="nv">Integer</span><span class="p">)</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">match</span> <span class="nv">e</span>
+    <span class="p">[(</span><span class="nf">Val</span> <span class="nv">n</span><span class="p">)</span> <span class="nv">n</span><span class="p">]</span>
+    <span class="p">[(</span><span class="nf">Add</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span> <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e1</span><span class="p">)</span>
+                    <span class="p">(</span><span class="nb">eval</span> <span class="nv">e2</span><span class="p">))]</span>
+    <span class="p">[(</span><span class="nf">Mul</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span> <span class="p">(</span><span class="nb">-</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e1</span><span class="p">)</span>
+                    <span class="p">(</span><span class="nb">eval</span> <span class="nv">e2</span><span class="p">))]))</span>
+</code></pre></div></div>
+
+<p>因为代码的转换以及类型的检查都在compile time发生，所以我们并没有破坏类型的安全性。但是由于我不太喜欢调试宏，就一直坑在这儿，直到前不久看到 @leafac 的这个包，才发现原来 Maryland University 也有人有过相似的想法，现在来看看最终的解法：</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">define/match/extensible</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="nv">:</span> <span class="p">(</span><span class="nf">-&gt;</span> <span class="nv">Expr</span> <span class="nv">Integer</span><span class="p">)</span>
+  <span class="p">[((</span><span class="nf">Val</span> <span class="nv">n</span><span class="p">))</span> <span class="nv">n</span><span class="p">]</span>
+  <span class="p">[((</span><span class="nf">Add</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">))</span> <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e1</span><span class="p">)</span>
+                    <span class="p">(</span><span class="nb">eval</span> <span class="nv">e2</span><span class="p">))])</span>
+<span class="p">(</span><span class="nf">define/match/extension/eval</span>
+  <span class="p">[((</span><span class="nf">Mul</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">))</span> <span class="p">(</span><span class="nb">-</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e1</span><span class="p">)</span>
+                    <span class="p">(</span><span class="nb">eval</span> <span class="nv">e2</span><span class="p">))])</span>
+<span class="c1">;; test</span>
+<span class="p">(</span><span class="nb">=</span> <span class="p">(</span><span class="nb">eval</span> <span class="p">(</span><span class="nf">Add</span> <span class="p">(</span><span class="nf">Mul</span> <span class="p">(</span><span class="nf">Val</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="nf">Val</span> <span class="mi">2</span><span class="p">))</span> <span class="p">(</span><span class="nf">Val</span> <span class="mi">1</span><span class="p">)))</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>本篇到这里就结束了，如果你想进一步了解 EP 的其他解法，可以顺着 wiki 看看已经发表的相关论文，如果对于如何在 OOP 中解决这个问题感兴趣请阅读我的另一篇文章 From FP to OOP, a.k.a Patterns。</p>]]></content><author><name>hidaris</name></author><category term="PL" /><summary type="html"><![CDATA[The Expression Problem is a new name for an old problem. The goal is to define a datatype by cases, where one can add new cases to the datatype and new functions over the datatype, without recompiling existing code, and while retaining static type safety (e.g., no casts). — Philip Wadler]]></summary></entry></feed>

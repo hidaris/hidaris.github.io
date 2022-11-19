@@ -1,0 +1,656 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>什么是 Web of Things - Accel World</title>
+<meta name="description" content="前段时间向公司做了一个关于 Web of Things 的分享，本文内容编辑自当时的 PPT。">
+
+
+  <meta name="author" content="hidaris">
+  
+  <meta property="article:author" content="hidaris">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Accel World">
+<meta property="og:title" content="什么是 Web of Things">
+<meta property="og:url" content="/web-of-things/">
+
+
+  <meta property="og:description" content="前段时间向公司做了一个关于 Web of Things 的分享，本文内容编辑自当时的 PPT。">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-07-03T10:00:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="/web-of-things/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "hidaris",
+      "url": "/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Accel World Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Accel World
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Archives</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/ivan.png" alt="hidaris" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">hidaris</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>An amazing website.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">The Internet</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:zuocool@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/hidaris" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="什么是 Web of Things">
+    <meta itemprop="description" content="  前段时间向公司做了一个关于 Web of Things 的分享，本文内容编辑自当时的 PPT。">
+    <meta itemprop="datePublished" content="2020-07-03T10:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">什么是 Web of Things
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#普适计算">普适计算</a></li><li><a href="#物联网">物联网</a><ul><li><a href="#无法联通的单品只是一个个分散的数据孤岛">无法联通的单品只是一个个分散的数据孤岛</a></li></ul></li><li><a href="#wot">WoT</a><ul><li><a href="#可发现">可发现</a></li><li><a href="#自描述">自描述</a></li></ul></li><li><a href="#总结">总结</a></li><li><a href="#引用">引用</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <blockquote>
+  <p>前段时间向公司做了一个关于 Web of Things 的分享，本文内容编辑自当时的 PPT。</p>
+</blockquote>
+
+<h2 id="普适计算">普适计算</h2>
+<p>我们今天的物联网还处在非常原始的阶段，甚至不存在一个标准的定义，想要更好的理解物联网是什么，我们首先要了解一段历史，为什么要回顾这段历史呢？</p>
+
+<p>我认为主要有两个价值：</p>
+<ul>
+  <li>尽管我不是一个历史决定论者，但不可否认的是，回溯历史，了解技术概念出现和演变的内在逻辑，有助于我们展望未来。技术发展的内在规律总是惊人的相似，而通过对今天的合理演绎，我们也能够更好的判断物联网未来的趋势和机遇。</li>
+  <li>如今，物联网的概念仅仅是呈现给我们一个结果，但是只了解结果、不知晓逻辑和过程无异于囫囵吞枣，我们很难消化其中的设计思想。所以，了解其发展历史能够揭开演化过程中思想的碰撞。</li>
+</ul>
+
+<p>1988年，Mark Weiser 在施乐帕洛阿尔托研究中心(PARC)担任首席技术专家期间，创造了「无处不在的计算」（Ubiquitous computing）这个词。Weiser 思考计算机时代的下一个爆发点，并于1991年在「21 世纪的计算机」一文中写道：</p>
+
+<blockquote>
+  <p>“影响最深远的技术是那些消失了的技术。它们把自己编织在日常生活的结构中，直到它们与我们的日常生活完全融合……相比之下，基于硅的信息技术离成为环境的一部分还差很远。超过 5000 万台个人电脑已被出售，尽管如此，计算机仍然在很大程度上是在一个自己的世界里。计算机领域充斥着许多复杂的术语，这些术语与用户实际想要使用它来做的事情毫无关系。”</p>
+</blockquote>
+
+<p>Weiser 比任何人都更早的看出这样一个趋势，电脑正从办公室里笨重的台式机朝着更小更智能的方向发展，之后将很快无缝嵌入我们周围的世界，融进我们的生活中。</p>
+
+<p>但是，伟大的想法往往超前于时代，普适计算在当时并没有得到学界的认可，甚至被认为是无稽之谈。（做个背景补充：20世纪80，90年代，苹果公司刚刚才推出了自己的第一代可携带的苹果笔记本电脑。）在 1991 年后的几年，互联网得到了早期的发展，随着万维网的发展，互联网最终成为了一个大型开放的全球一体化计算机网络。</p>
+
+<p>互联网的惊人成功让普适计算重新回到了人们的视野，许多研究人员开始考虑考虑将实物连接到互联网上，MIT 的 AutoID 实验室使用射频识别（RFID）标签来自动识别商品，打算建立一个电子标签产品的全球网络来优化物流和供应链，在描述这个全球网络时首次提出了物联网的术语。接下来的事情便众所周知了。</p>
+
+<h2 id="物联网">物联网</h2>
+<p>物联网诞生之后，看中了它巨大潜力的公司们，都急于为它建立策略或解决方案，他们将建筑、供应链、工厂和办公室等一切通过某种通讯方式连接起来，收集它们产生的数据，然后展现给人看，并允许人们对这些东西进行操作。包括今天我们所看到的“智能”家居设备、智慧城市、智慧工厂等，看起来我们真正地做到了“物联网”。我们动动手指头就能在外遥控家里空调开关、监视生产活动的各项参数、数据，甚至可以“大数据”一番，创造不错的收益。</p>
+
+<p>这个愿景听起来很美好，可惜的是，如果我们把“物联网”这个词拆开看，就会发现它联的“网”和我们平时所上的“网”是完全不同的两个东西。所以，今天的物联网与其说是物联网，不如说是物联局域网，因为它们是一堆功能与数据的孤岛，彼此之间不能互通共享。</p>
+
+<p>人人都想从未来的发展中分一杯羹，这就导致了技术的碎片化：</p>
+<ul>
+  <li>我的协议比你更好，重复发明协议以提高自己的影响力（<a href="https://en.wikipedia.org/wiki/List_of_automation_protocols">数以百计</a>），当大量的人力被用来重复发明轮子又使得创新减少。</li>
+  <li>聚焦于物联网的小问题，如硬件与数据处理，没有关注像建立一个端到端、可扩展的安全系统，将硬件、数据、处理过程、可视化及人机交互放在一起这样更大的图景。</li>
+</ul>
+
+<p>下面用两组智能家居的图说明这个现状：
+<img src="https://cdn.jsdelivr.net/gh/hidaris/hidaris.github.io@master/img/pre_iot.png" alt="pre_iot" />
+<img src="https://cdn.jsdelivr.net/gh/hidaris/hidaris.github.io@master/img/post_iot.png" alt="post_iot" /></p>
+
+<p>针对这样的现状，WoT 协议的作者说了这么一句黑话：
+<img src="https://cdn.jsdelivr.net/gh/hidaris/hidaris.github.io@master/img/iot_complex.png" alt="iot_complex" /></p>
+
+<h3 id="无法联通的单品只是一个个分散的数据孤岛">无法联通的单品只是一个个分散的数据孤岛</h3>
+<p>技术的碎片化导致我们通过智能音响做得最多的操作，也不过是播放音乐、查看天气和设定闹钟；家里A品牌的智能机顶盒和B品牌的彩电不能兼容，C品牌的智能照明也不能被D品牌智能面板的控制。于是我们只能在手机里新建一个叫“智能家居”的文件夹，拖进去N个APP来控制N个品牌的智能单品。</p>
+
+<p>单品与单品之间互不认识又导致了很多体验问题：</p>
+<ul>
+  <li>门“不认识”灯，所以我们打开房间后，要伸手在黑暗中摸索电灯开关；</li>
+  <li>车库“不认识”热水器，所以我们在车库停好车回家后，要自己打开热水器，再坐等水热。</li>
+  <li>浴室镜子“不认识”淋浴喷头，所以我们洗完澡后，要自己用手抹去镜子上的水雾。</li>
+</ul>
+
+<p>再者，对于一家想要布局智能化产品的企业来说，考虑成本往往只能购买一家公司的解决方案。但一家公司的方案又不能完全满足客户的全部需求，这时候要么考虑更换解决方案，花费不菲；要么找人整合方案，同样成本不低。</p>
+
+<p>所以为了避免同质化，我们需要搞清：真正要解决的是什么问题，需要连接什么，为什么要连接它们？</p>
+
+<h2 id="wot">WoT</h2>
+<p>回答上一个问题：物联网面临的真实挑战与技术关系不大，与实际用例关系比较大。</p>
+
+<p>那么是否有可靠的通讯协议可以供使用来解决碎片化问题，同时又可以降低开发门槛，能够让开发者更多的关注在用例上呢。所以 Web of Things，简称 WoT 出现了。WoT 决定审视和学习目前最成功的的万维网（World Wide Web，WWW），万维网具有规模，开放且易于参与，而且最重要的是，它是通用的。如果它能足够好的支持银行服务、游戏、聊天室并且改变传媒业，那么它为什么不能足够好的支持物联网呢？</p>
+
+<p>所以当 IoT + Web，我们可以使用 HTTP 做设备之间的交互，使用 JSON 结构化描述数据，使用 TLS 保障传输安全性，使用 JWT 做认证。这些标准每天在全球范围内经手考验，已经非常成熟、被业界认可了。</p>
+
+<p>仅仅如此吗？</p>
+<blockquote>
+  <p>既然用 Web 技术，用 HTTP、JSON 这种应用层的协议就能统一物联网，难道不可以自己定一套基于 HTTP 和 JSON 的协议吗？这不是又导致碎片化了吗？</p>
+</blockquote>
+
+<p>WoT 相比于直接使用 Web，解决了设备之间的可发现、自描述和互操作问题，这些都需要精良的设计。</p>
+
+<h3 id="可发现">可发现</h3>
+<p>可发现的需求来自于开箱即用，即一个 WoT 设备接入了网络后，以某种方式通知这个网络里的其它 WoT 设备自己的 IP 地址，目前 WoT 标准使用 mDNS 来让设备广播自己在局域网中的域名（URL）和地址。由于 WoT 本身是可被消费的应用层 API，UI 在获得对应服务的地址后可以根据 API 描述自动加载对应的控件。所以，对用户来说，添加一个 WoT 设备就像给电脑插一个 USB 设备一样简单。</p>
+
+<h3 id="自描述">自描述</h3>
+<p>为了避免分裂，在 WoT 中设备本身需要通过一些额外的信息来向另外一个设备描述自己，比如拥有什么属性，可以执行什么操作，等等；而描述这些信息的同时我们又要兼顾机器可读及人类可读，为了不给协议本身增加额外的负担，这些“资源”都是可以使用 URL（“统一资源定位符”）link 的。这种使用 URI 来描述互联网上资源的方式被称为关联数据（Linked Data），利用这一特性，我们就可以在 WoT 协议之中，关联用于定义协议本身的元数据（Schema）。</p>
+
+<h2 id="总结">总结</h2>
+<p>物联网（IoT）具备发展为普适计算的潜力，但由于技术图景的碎片化而停滞不前。Web of Things 旨在解决物联网 (IoT) 的分裂问题，使构建用例变得更加容易，并且不需掌握各种复杂的物联网技术和标准，有许多行业将受益，例如 STEAM 教育，智能家居，智能城市，智能产业，智能农业，智能医疗等等。</p>
+
+<h2 id="引用">引用</h2>
+<ol>
+  <li><a href="https://www.zhihu.com/question/26469697">Web of Things是什么？与IoT（物联网）有何区别？
+</a></li>
+  <li><a href="https://book.douban.com/subject/27624444/">从物联到万联：Node.js 与树莓派万维物联网构建实践</a></li>
+  <li><a href="https://webofthings.org/">Web of Things</a></li>
+  <li><a href="https://blog.just4fun.site/post/iot/introducing-webthings/">介绍 WebThings</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/133719619">世界不是一台大iPhone！——谈万物互联的人机交互史
+</a></li>
+</ol>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-07-03T10:00:00+00:00">July 3, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%E4%BB%80%E4%B9%88%E6%98%AF+Web+of+Things%20%2Fweb-of-things%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fweb-of-things%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fweb-of-things%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/pl/expression-problem/" class="pagination--pager" title="Expression Problem 的另一个解法
+">Previous</a>
+    
+    
+      <a href="/jekyll/update/welcome-to-jekyll/" class="pagination--pager" title="Welcome to Jekyll!
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/the-ultimate-display/" rel="permalink"><译> 终极显示
+</译>
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">(((1965年的这篇著名的论文是新兴技术的一个种子炸弹。对于增强现实来说，这相当于范尼瓦尔-布什关于计算机网络的著名论文 “As We May Think”（1945）。)))
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/jekyll/update/welcome-to-jekyll/" rel="permalink">Welcome to Jekyll!
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/pl/expression-problem/" rel="permalink">Expression Problem 的另一个解法
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  The Expression Problem is a new name for an old problem. The goal is to define a datatype by cases, where one can add new cases to the datatype and new fu...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 hidaris. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

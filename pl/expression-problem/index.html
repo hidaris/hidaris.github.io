@@ -1,0 +1,765 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Expression Problem 的另一个解法 - Accel World</title>
+<meta name="description" content="The Expression Problem is a new name for an old problem. The goal is to define a datatype by cases, where one can add new cases to the datatype and new functions over the datatype, without recompiling existing code, and while retaining static type safety (e.g., no casts). — Philip Wadler">
+
+
+  <meta name="author" content="hidaris">
+  
+  <meta property="article:author" content="hidaris">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Accel World">
+<meta property="og:title" content="Expression Problem 的另一个解法">
+<meta property="og:url" content="/pl/expression-problem/">
+
+
+  <meta property="og:description" content="The Expression Problem is a new name for an old problem. The goal is to define a datatype by cases, where one can add new cases to the datatype and new functions over the datatype, without recompiling existing code, and while retaining static type safety (e.g., no casts). — Philip Wadler">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2016-01-01T07:33:01+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="/pl/expression-problem/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "hidaris",
+      "url": "/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Accel World Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Accel World
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Archives</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/ivan.png" alt="hidaris" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">hidaris</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>An amazing website.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">The Internet</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:zuocool@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/hidaris" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Expression Problem 的另一个解法">
+    <meta itemprop="description" content="  The Expression Problem is a new name for an old problem. The goal is to define a datatype by cases, where one can add new cases to the datatype and new functions over the datatype, without recompiling existing code, and while retaining static type safety (e.g., no casts). — Philip Wadler">
+    <meta itemprop="datePublished" content="2016-01-01T07:33:01+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Expression Problem 的另一个解法
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <blockquote>
+  <p>The Expression Problem is a new name for an old problem. The goal is to define a datatype by cases, where one can add new cases to the datatype and new functions over the datatype, without recompiling existing code, and while retaining static type safety (e.g., no casts). — Philip Wadler</p>
+</blockquote>
+
+<p>首先，为了更直观的理解这个问题，我们来看一段用 Typed Racket 写的例子。</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">define-type</span> <span class="nv">Expr</span> <span class="p">(</span><span class="nf">U</span> <span class="nv">Lit</span> <span class="nv">Add</span><span class="p">))</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Lit</span> <span class="p">([</span><span class="nf">i</span> <span class="nv">:</span> <span class="nv">Integer</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Add</span> <span class="p">([</span><span class="nf">e1</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">]</span> <span class="p">[</span><span class="nf">e2</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nf">:</span> <span class="nv">e</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">)</span>
+<span class="p">(</span><span class="k">define</span> <span class="nv">e</span> <span class="p">(</span><span class="nf">Add</span> <span class="p">(</span><span class="nf">Lit</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nf">Add</span> <span class="p">(</span><span class="nf">Lit</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nf">Lit</span> <span class="mi">1</span><span class="p">))))</span>
+
+<span class="p">(</span><span class="nf">:</span> <span class="nv">eval</span> <span class="nv">:</span> <span class="nv">Expr</span> <span class="nv">-&gt;</span> <span class="nv">Integer</span><span class="p">)</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">match</span> <span class="nv">e</span>
+    <span class="p">[(</span><span class="nf">Lit</span> <span class="nv">i</span><span class="p">)</span> <span class="nv">i</span><span class="p">]</span>
+    <span class="p">[(</span><span class="nf">Add</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span>
+     <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e1</span><span class="p">)</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e2</span><span class="p">))]))</span>
+</code></pre></div></div>
+
+<p>在这段代码中，我们定义了一个表达式类型 Expr，以及一个基于 Expr 类型进行模式匹配的函数 eval。然后，我们另写一个基于 Expr 类型的函数 view，它的作用是查看对应类型的字符串表示，定义如下：</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">:</span> <span class="nv">view</span> <span class="nv">:</span> <span class="nv">Expr</span> <span class="nv">-&gt;</span> <span class="nv">String</span><span class="p">)</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">view</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">match</span> <span class="nv">e</span>
+    <span class="p">[(</span><span class="nf">Lit</span> <span class="nv">i</span><span class="p">)</span> <span class="p">(</span><span class="nb">number-&gt;string</span> <span class="nv">i</span><span class="p">)]</span>
+    <span class="p">[(</span><span class="nf">Add</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span> <span class="p">(</span><span class="nb">string-append</span> <span class="p">(</span><span class="nf">view</span> <span class="nv">e1</span><span class="p">)</span> <span class="s">"+"</span> <span class="p">(</span><span class="nf">view</span> <span class="nv">e2</span><span class="p">))]))</span>
+</code></pre></div></div>
+
+<p>通过这两个例子，我们可以看出添加一个函数并不会影响之前的函数，但是添加一个 construct 的情况就不一样了</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">define-type</span> <span class="nv">Expr</span> <span class="p">(</span><span class="nf">U</span> <span class="nv">Lit</span> <span class="nv">Add</span> <span class="nv">Mul</span><span class="p">))</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Lit</span> <span class="p">([</span><span class="nf">i</span> <span class="nv">:</span> <span class="nv">Integer</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Add</span> <span class="p">([</span><span class="nf">e1</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">]</span> <span class="p">[</span><span class="nf">e2</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Mul</span> <span class="p">([</span><span class="nf">e1</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">]</span> <span class="p">[</span><span class="nf">e2</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>因为 Expr 中多了一个 Mul 类型，所以以 Expr 为参数类型的函数全都会受到影响。Why？因为模式匹配并没有 handle 那个新类型，所以为了修复这个问题，我们得改动所有的这些函数来添加对 Mul 类型的处理。</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">:</span> <span class="nv">eval</span> <span class="nv">:</span> <span class="nv">Expr</span> <span class="nv">-&gt;</span> <span class="nv">Integer</span><span class="p">)</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">match</span> <span class="nv">e</span>
+    <span class="p">[(</span><span class="nf">Lit</span> <span class="nv">i</span><span class="p">)</span> <span class="nv">i</span><span class="p">]</span>
+    <span class="p">[(</span><span class="nf">Add</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span>
+     <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e1</span><span class="p">)</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e2</span><span class="p">))]</span>
+    <span class="p">[(</span><span class="nf">Mul</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span>
+     <span class="p">(</span><span class="nb">*</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e1</span><span class="p">)</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e2</span><span class="p">))]))</span>
+
+<span class="p">(</span><span class="nf">:</span> <span class="nv">view</span> <span class="nv">:</span> <span class="nv">Expr</span> <span class="nv">-&gt;</span> <span class="nv">String</span><span class="p">)</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">view</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">match</span> <span class="nv">e</span>
+    <span class="p">[(</span><span class="nf">Lit</span> <span class="nv">i</span><span class="p">)</span> <span class="p">(</span><span class="nb">number-&gt;string</span> <span class="nv">i</span><span class="p">)]</span>
+    <span class="p">[(</span><span class="nf">Add</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span> <span class="p">(</span><span class="nb">string-append</span> <span class="p">(</span><span class="nf">view</span> <span class="nv">e1</span><span class="p">)</span> <span class="s">"+"</span> <span class="p">(</span><span class="nf">view</span> <span class="nv">e2</span><span class="p">))]</span>
+    <span class="p">[(</span><span class="nf">Mul</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span> <span class="p">(</span><span class="nb">string-append</span> <span class="p">(</span><span class="nf">view</span> <span class="nv">e1</span><span class="p">)</span> <span class="s">"*"</span> <span class="p">(</span><span class="nf">view</span> <span class="nv">e2</span><span class="p">))]))</span>
+</code></pre></div></div>
+
+<p>这个问题就是经典的表达式问题，按照传统的抽象方法，我们会在 FP 中添加类型或者 OOP 中添加函数时遇到这个问题，我们先讨论 FP 的情况如何解决，然后进一步拓展到 OOP 中如何解决，对于这个问题，有许多先辈提出了一些解法，比如 Tagless-final，解决思路很有趣，但是今天我们来重新思考是否有其他解法，这个思考的过程比直接学会一个解法更重要。</p>
+
+<p>我们定义的 Expr 类型是一个 Union type，在范畴论中，我们称之为 Coprodut， 从 wiki 中我们可以看出这种 关系和 Persistent Linked_list 是一种近似同构的关系。这里我开个玩笑，从中我们得到一个解决表达式问题的思路：Persistent Union Type，当然这是我生造的一个名词:) 在继续往下读前，请先阅读一遍我给出的两篇 wiki，内容不是很难理解，大概需要10分钟左右的时间。</p>
+
+<p>OK，我们知道了 union type 和 persistent linked_lists 是一种同构关系，在链表前增加节点，对应到类型中，就是在原有的类型上并上一个新的 constructor，由于我们未丢失原来的结构，所以新链表与原有链表共享所有的旧节点，我们新的类型与原来的类型也共享同样的 constructor，对新的链表或类型进行的变换（函数）等价于对旧结构进行变换并加上新结构的变换，这里看两个相似的例子感受一下： 简单算术运算</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">x+y+z</span><span class="p">)</span><span class="nv">*2</span> <span class="nv">=</span> <span class="nv">x*2+y*2+z*2</span>
+          <span class="nv">=</span> <span class="p">(</span><span class="nf">x+y</span><span class="p">)</span><span class="nv">*2+z*2</span>
+</code></pre></div></div>
+
+<p>链表操作</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">map</span> <span class="p">(</span><span class="nf">curry</span> <span class="nv">+</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="k">quote</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">))</span> <span class="nv">=</span> <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nb">+</span> <span class="mi">2</span> <span class="mi">1</span><span class="p">)</span>
+                                    <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nb">+</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">)</span>
+                                      <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nb">+</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span>
+                                            <span class="nv">empty</span><span class="p">)))</span>
+                                <span class="nv">=</span> <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nb">+</span> <span class="mi">2</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nb">map</span> <span class="p">(</span><span class="nf">curry</span> <span class="nv">+</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="k">quote</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<p>那么，我们来看看以这个思路，如何给 Expr 类型添加 Mul 拓展</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">define-type</span> <span class="nv">Expr</span> <span class="p">(</span><span class="nf">U</span> <span class="nv">Lit</span> <span class="nv">Add</span><span class="p">))</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Lit</span> <span class="p">([</span><span class="nf">i</span> <span class="nv">:</span> <span class="nv">Integer</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Add</span> <span class="p">([</span><span class="nf">e1</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">]</span> <span class="p">[</span><span class="nf">e2</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">define-type</span> <span class="nv">Expr+Mul</span> <span class="p">(</span><span class="nf">U</span> <span class="nv">Expr</span> <span class="nv">Mul</span><span class="p">))</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Mul</span> <span class="p">([</span><span class="nf">e1</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">]</span> <span class="p">[</span><span class="nf">e2</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>可以将类型进一步展开</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">;; Expr</span>
+<span class="p">(</span><span class="nf">U</span> <span class="nv">Lit</span> <span class="nv">Add</span><span class="p">)</span>
+<span class="c1">;; Expr+Mul</span>
+<span class="p">(</span><span class="nf">U</span> <span class="nv">Lit</span> <span class="nv">Add</span> <span class="nv">Mul</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>类型是抽象值的集合，集合的并可以看做“加法”，也就是说我们直接在类型上做加法，然后可以看看相应的函数拓展：</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">define-type</span> <span class="nv">Expr</span> <span class="p">(</span><span class="nf">U</span> <span class="nv">Lit</span> <span class="nv">Add</span><span class="p">))</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Lit</span> <span class="p">([</span><span class="nf">v</span> <span class="nv">:</span> <span class="nv">Integer</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Add</span> <span class="p">([</span><span class="nf">e1</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">]</span> <span class="p">[</span><span class="nf">e2</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">define-predicate</span> <span class="nv">Expr?</span> <span class="nv">Expr</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nf">:</span> <span class="nv">eval-add</span> <span class="nv">:</span> <span class="nv">Exp</span> <span class="nv">-&gt;</span> <span class="nv">Integer</span><span class="p">)</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">eval-add</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">match</span> <span class="nv">e</span>
+    <span class="p">[(</span><span class="nf">Lit</span> <span class="nv">n</span><span class="p">)</span> <span class="nv">n</span><span class="p">]</span>
+    <span class="p">[(</span><span class="nf">Add</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span> <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nf">eval-add</span> <span class="nv">e1</span><span class="p">)</span>
+                    <span class="p">(</span><span class="nf">eval-add</span> <span class="nv">e2</span><span class="p">))]))</span>
+
+<span class="p">(</span><span class="nf">define-type</span> <span class="nv">Expr+Mul</span> <span class="p">(</span><span class="nf">U</span> <span class="nv">Exp</span> <span class="nv">Mul</span><span class="p">))</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Mul</span> <span class="p">([</span><span class="nf">e1</span> <span class="nv">:</span> <span class="nv">Expr+Mul</span><span class="p">]</span> <span class="p">[</span><span class="nf">e2</span> <span class="nv">:</span> <span class="nv">Expr+Mul</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nf">:</span> <span class="nv">eval-mul</span> <span class="nv">:</span> <span class="nv">Exp+Mul</span> <span class="nv">-&gt;</span> <span class="nv">Integer</span><span class="p">)</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">eval-mul</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">cond</span>
+    <span class="p">[(</span><span class="nf">Exp?</span> <span class="nv">e</span><span class="p">)</span> <span class="p">(</span><span class="nf">eval-add</span> <span class="nv">e</span><span class="p">)]</span>
+    <span class="p">[</span><span class="nf">else</span>
+     <span class="p">(</span><span class="nf">match</span> <span class="nv">e</span>
+       <span class="p">[(</span><span class="nf">Mul</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span> <span class="p">(</span><span class="nb">-</span> <span class="p">(</span><span class="nf">eval-mul</span> <span class="nv">e1</span><span class="p">)</span>
+                       <span class="p">(</span><span class="nf">eval-mul</span> <span class="nv">e2</span><span class="p">))])]))</span>
+</code></pre></div></div>
+
+<p>所以，问题到这里就解决了吗？我们将添加 construct 的操作看作类型上的加法，相应的函数也可以复用旧有的函数，一切似乎都 OK，但是这么做还有一个问题，如果我们给 Add 传递一个 Mul 类型的参数，会发现在函数eval-add 中没有 handle 这个类型。因为 Add 接受的是 Expr 类型，所以只接受 Val 和 Add，而扩展后的 Expr 名变成了 Expr+Mul，我们希望的是能够扩展 Expr 类型而不改变它的名字，这听起来像什么？没错，像在面向对象中声明一个接口，然后给它添加一个新的实现，这在 FP 中叫做 subtype。因此，我们可以将 Expr 的定义以这种方式修改下：</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">struct</span> <span class="nv">Expr</span> <span class="p">())</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Val</span> <span class="nv">Expr</span> <span class="p">([</span><span class="nf">v</span> <span class="nv">:</span> <span class="nv">Integer</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">struct</span> <span class="nv">Add</span> <span class="nv">Expr</span> <span class="p">([</span><span class="nf">e1</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">]</span> <span class="p">[</span><span class="nf">e2</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>上述的新做法是定义一个 Expr 类型，然后将 Val，Add 分别作为它的 subtype，现在可以为它定义 eval 函数了</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">:</span> <span class="nv">eval</span> <span class="nv">:</span> <span class="nv">Exp</span> <span class="nv">-&gt;</span> <span class="nv">Integer</span><span class="p">)</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">match</span> <span class="nv">e</span>
+    <span class="p">[(</span><span class="nf">Val</span> <span class="nv">n</span><span class="p">)</span> <span class="nv">n</span><span class="p">]</span>
+    <span class="p">[(</span><span class="nf">Add</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span> <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e1</span><span class="p">)</span>
+                    <span class="p">(</span><span class="nb">eval</span> <span class="nv">e2</span><span class="p">))]))</span>
+<span class="c1">;; test</span>
+<span class="p">(</span><span class="nb">=</span> <span class="p">(</span><span class="nb">eval</span> <span class="p">(</span><span class="nf">Add</span> <span class="p">(</span><span class="nf">Val</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="nf">Val</span> <span class="mi">3</span><span class="p">)))</span> <span class="mi">5</span><span class="p">)</span> <span class="c1">; return true</span>
+</code></pre></div></div>
+
+<p>定义了 eval 后，我们得扩展 Expr，给它添加一个新的 subtype，Mul：</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">struct</span> <span class="nv">Mul</span> <span class="nv">Expr</span> <span class="p">([</span><span class="nf">e1</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">]</span> <span class="p">[</span><span class="nf">e2</span> <span class="nv">:</span> <span class="nv">Expr</span><span class="p">])</span> <span class="nt">#:transparent</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>最终，我们要扩展 eval，使它能够 handle Mul 类型，如何做呢？如果采取我们之前的做法</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">:</span> <span class="nv">evalM</span> <span class="p">(</span><span class="nf">-&gt;</span> <span class="nv">Expr</span> <span class="nv">Integer</span><span class="p">))</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">evalM</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">cond</span>
+    <span class="p">[(</span><span class="nf">Expr?</span> <span class="nv">e</span><span class="p">)</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e</span><span class="p">)]</span>
+    <span class="p">[(</span><span class="nf">Mul?</span> <span class="nv">e</span><span class="p">)</span> <span class="p">(</span><span class="nb">-</span> <span class="p">(</span><span class="nb">eval</span> <span class="p">(</span><span class="nf">Mul-e1</span> <span class="nv">e</span><span class="p">))</span>
+                 <span class="p">(</span><span class="nb">eval</span> <span class="p">(</span><span class="nf">Mul-e2</span> <span class="nv">e</span><span class="p">)))]))</span>
+</code></pre></div></div>
+
+<p>TR 会给你一个error: match: no matching clause for (Mul …，因为现在 Expr 包括了 Mul，所以 Mul 这一行永远执行不到，那么我们调整一下cond分支的顺序，先处理 Mul 然后再处理剩下的 Val 或者 Add：</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">:</span> <span class="nv">evalM</span> <span class="p">(</span><span class="nf">-&gt;</span> <span class="nv">Expr</span> <span class="nv">Integer</span><span class="p">))</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">evalM</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">cond</span>
+    <span class="p">[(</span><span class="nf">Mul?</span> <span class="nv">e</span><span class="p">)</span> <span class="p">(</span><span class="nb">-</span> <span class="p">(</span><span class="nb">eval</span> <span class="p">(</span><span class="nf">Mul-e1</span> <span class="nv">e</span><span class="p">))</span>
+                 <span class="p">(</span><span class="nb">eval</span> <span class="p">(</span><span class="nf">Mul-e2</span> <span class="nv">e</span><span class="p">)))]</span>
+    <span class="p">[(</span><span class="nf">Expr?</span> <span class="nv">e</span><span class="p">)</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e</span><span class="p">)]))</span>
+</code></pre></div></div>
+
+<p>现在，我们可以对(Mul (Add (Val 3) (Val 2)) (Val 1))这样的类型求值了，但是如果 Mul 出现在 Add 的参数中，则求值依旧会失败，因为匹配到 Add 时，我们使用的是 eval 方法，而 eval 不能 handle Mul 类型，所以我们需要一个可扩展的函数,Racket 自身并没有提供这种函数的定义方式。我们可以安装extensible-functions这个包，本来我也不知道这个包的存在，在写了这篇博客的早期，我大体想过如何解决这个问题，就是利用 Racket 的Macro在compile time将原来的函数 eval 复制到新函数 evalM 中，并且统一名字为 evalM，也就是说虽然我们在用户代码看到的是简单的对 eval 的扩展，但实际上这个函数已经被转换成：</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">:</span> <span class="nv">eval</span> <span class="nv">:</span> <span class="nv">Expr</span> <span class="nv">-&gt;</span> <span class="nv">Integer</span><span class="p">)</span>
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">match</span> <span class="nv">e</span>
+    <span class="p">[(</span><span class="nf">Val</span> <span class="nv">n</span><span class="p">)</span> <span class="nv">n</span><span class="p">]</span>
+    <span class="p">[(</span><span class="nf">Add</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span> <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e1</span><span class="p">)</span>
+                    <span class="p">(</span><span class="nb">eval</span> <span class="nv">e2</span><span class="p">))]</span>
+    <span class="p">[(</span><span class="nf">Mul</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">)</span> <span class="p">(</span><span class="nb">-</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e1</span><span class="p">)</span>
+                    <span class="p">(</span><span class="nb">eval</span> <span class="nv">e2</span><span class="p">))]))</span>
+</code></pre></div></div>
+
+<p>因为代码的转换以及类型的检查都在compile time发生，所以我们并没有破坏类型的安全性。但是由于我不太喜欢调试宏，就一直坑在这儿，直到前不久看到 @leafac 的这个包，才发现原来 Maryland University 也有人有过相似的想法，现在来看看最终的解法：</p>
+
+<div class="language-racket highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">define/match/extensible</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e</span><span class="p">)</span>
+  <span class="nv">:</span> <span class="p">(</span><span class="nf">-&gt;</span> <span class="nv">Expr</span> <span class="nv">Integer</span><span class="p">)</span>
+  <span class="p">[((</span><span class="nf">Val</span> <span class="nv">n</span><span class="p">))</span> <span class="nv">n</span><span class="p">]</span>
+  <span class="p">[((</span><span class="nf">Add</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">))</span> <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e1</span><span class="p">)</span>
+                    <span class="p">(</span><span class="nb">eval</span> <span class="nv">e2</span><span class="p">))])</span>
+<span class="p">(</span><span class="nf">define/match/extension/eval</span>
+  <span class="p">[((</span><span class="nf">Mul</span> <span class="nv">e1</span> <span class="nv">e2</span><span class="p">))</span> <span class="p">(</span><span class="nb">-</span> <span class="p">(</span><span class="nb">eval</span> <span class="nv">e1</span><span class="p">)</span>
+                    <span class="p">(</span><span class="nb">eval</span> <span class="nv">e2</span><span class="p">))])</span>
+<span class="c1">;; test</span>
+<span class="p">(</span><span class="nb">=</span> <span class="p">(</span><span class="nb">eval</span> <span class="p">(</span><span class="nf">Add</span> <span class="p">(</span><span class="nf">Mul</span> <span class="p">(</span><span class="nf">Val</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="nf">Val</span> <span class="mi">2</span><span class="p">))</span> <span class="p">(</span><span class="nf">Val</span> <span class="mi">1</span><span class="p">)))</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>本篇到这里就结束了，如果你想进一步了解 EP 的其他解法，可以顺着 wiki 看看已经发表的相关论文，如果对于如何在 OOP 中解决这个问题感兴趣请阅读我的另一篇文章 From FP to OOP, a.k.a Patterns。</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#pl" class="page__taxonomy-item" rel="tag">PL</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2016-01-01T07:33:01+00:00">January 1, 2016</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Expression+Problem+%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E8%A7%A3%E6%B3%95%20%2Fpl%2Fexpression-problem%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fpl%2Fexpression-problem%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fpl%2Fexpression-problem%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/web-of-things/" class="pagination--pager" title="什么是 Web of Things
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/the-ultimate-display/" rel="permalink"><译> 终极显示
+</译>
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">(((1965年的这篇著名的论文是新兴技术的一个种子炸弹。对于增强现实来说，这相当于范尼瓦尔-布什关于计算机网络的著名论文 “As We May Think”（1945）。)))
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/jekyll/update/welcome-to-jekyll/" rel="permalink">Welcome to Jekyll!
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/web-of-things/" rel="permalink">什么是 Web of Things
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  前段时间向公司做了一个关于 Web of Things 的分享，本文内容编辑自当时的 PPT。
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 hidaris. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

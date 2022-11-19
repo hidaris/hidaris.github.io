@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>/pl/expression-problem/</loc>
+<lastmod>2016-01-01T07:33:01+00:00</lastmod>
+</url>
+<url>
+<loc>/web-of-things/</loc>
+<lastmod>2020-07-03T10:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>/jekyll/update/welcome-to-jekyll/</loc>
+<lastmod>2021-11-07T07:33:01+00:00</lastmod>
+</url>
+<url>
+<loc>/the-ultimate-display/</loc>
+<lastmod>2022-04-07T10:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>/about/</loc>
+</url>
+<url>
+<loc>/categories/</loc>
+</url>
+<url>
+<loc>/</loc>
+</url>
+<url>
+<loc>/tags/</loc>
+</url>
+<url>
+<loc>/posts/</loc>
+</url>
+</urlset>
